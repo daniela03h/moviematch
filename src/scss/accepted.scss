@@ -19,15 +19,24 @@ $black: #000;
 .container-accepted {
 background: $dark-purple;
 color: $white;
+margin-top: 33%;
+position: relative;
 }
 
 .container-logo {
-    border-radius: 50%;
+    border-radius: 100%;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-content: center;
+    top: -60px;
+    background-color: $dark-purple;
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     background: $dark-purple;
 }
 
