@@ -175,10 +175,16 @@ main {
 
     .container-info  {
         border-bottom: 1px solid $light-purple;
+        width: 80%;
     }
 
     .info-description {
         border-bottom: none;
+        width: 500px;
+    }
+
+   .info-reverse {
+    order: 2;
     }
     
 }
