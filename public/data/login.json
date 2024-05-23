@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": "ad2",
+      "username": "example",
+      "email": "example1@example.com",
+      "password": "123",
+      "icon": "urlurlurl",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "d435",
+      "username": "jarenas1",
+      "email": "jcomte23@gmail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "bb69",
+      "username": "jarenas1",
+      "email": "jcomte3@gmail.com",
+      "password": "333",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "528f",
+      "username": "1207",
+      "email": "cuentadeplay246228@gmail.com",
+      "password": "123",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "99d8",
+      "username": "1207",
+      "email": "cuentadeplay2462238@gmail.com",
+      "password": "123",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "3a4f",
+      "username": "1207",
+      "email": "c1uentadeplay2462238@gmail.com",
+      "password": "11",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "7799",
+      "username": "jarenas1",
+      "email": "cuentadeplay2468@gmail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "e866",
+      "username": "1207",
+      "email": "jcomte23@gmail.c",
+      "password": "borodog0901",
+      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
+      "favMovies": [],
+      "notFavMovies": []
+    }
+  ]
+}
