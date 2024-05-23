@@ -9,6 +9,7 @@
 
 $faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
 $dark-purple: #0F001E;
+$light-purple: #3E2E57;
 $light-grey: #EFEFEF;
 $grey: #9D9D9C;
 $blue: #0E41E8;
@@ -18,20 +19,25 @@ $black: #000;
 body {
     background: $dark-purple;
     color: $white;
+    position: relative;
 }
 
-header { 
+header {
     position: fixed;
     width: 100%;
     top: 0;
 }
 
-.navbar-toggler-icon {
-    background-color: white; 
+.nav-scrolled-background {
+    background-color: $dark-purple;
 }
 
 .nav-link {
     color: $white !important;
+}
+
+.navbar-nav {
+    background: $dark-purple;
 }
 
 .logo {
@@ -51,8 +57,8 @@ header {
     background-repeat: no-repeat;
     width: 50%;
     height: 370px;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: -100px;
     right: 0;
     z-index: -1;
     opacity: .60;
@@ -77,7 +83,7 @@ header {
     border-radius: 10px;
     height: 80px;
     padding-top: 5px;
-   
+
 }
 
 .logo-button {
@@ -97,12 +103,82 @@ main {
 }
 
 .match-button {
-    // align-self: flex-end;
     padding-top: 150px;
 }
 
 .info {
-    border: 1px solid $blue;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
+.info-description {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $light-purple;
+}
+
+.footer {
+    background: $black;
+}
+
+.container-name-footer {
+    border-left: 1px solid $grey;
+}
+
+.social-networks {
+    color: $white;
+}
+
+@media screen and (min-width: 992px) {
+    .container-sing {
+        order: 2;
+    }
+
+    .navbar-nav {
+        background: transparent;
+        // gap: 80px;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icon-sing {
+        width: 40px;
+    }
+
+    .title-header {
+        font-size: 20px;
+    }
+
+    .container-img-desktop {
+        background-image: url(../../public/img/image-desktop.webp);
+        background-size: 100% 700px;
+        height: 700px;
+        top: -200px;
+    }
+
+    .home {
+        padding-top: 150px;
+    }
+
+    .article-description h1 {
+        font-size: 80px;
+    }
+
+    .article-description p {
+        font-size: 35px;
+    }
+
+    .info {
+        margin-top: 200px;
+    }
+
+    .container-info  {
+        border-bottom: 1px solid $light-purple;
+    }
+
+    .info-description {
+        border-bottom: none;
+    }
+    
+}
