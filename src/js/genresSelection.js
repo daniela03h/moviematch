@@ -6,9 +6,13 @@ const apiKey =
 let genresSection = document.getElementById("genres");
 let genresSelected = document.getElementById("selected-genres");
 let selectedGenre = {};
+let genres=[];
+let genreString;
 const botonSearch = document.getElementById("search");
+const botonSearch2 = document.getElementById("search2");
 
-//llamado de la api recomendado por TMDB (la api que se está utilizando)
+
+// Llamado a la API recomendado por TMDB (la API que se está utilizando)
 const options = {
   method: "GET",
   headers: {
@@ -17,73 +21,73 @@ const options = {
   },
 };
 
-fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options) //llamado a la api (link que llama a los generos, constante que indica el metodo (en este cado, get). )
-  .then((response) => response.json()) //promesa que recibe los datos que trae la api y les quita el formato JSON
-  .then((data) => { //la respuesta de la promesa se introduce en la variable objeto "data", y se ejecuta la siguiente función
+fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options) // Llamado a la API (link que llama a los géneros, constante que indica el método (en este caso, GET).)
+  .then((response) => response.json()) // Promesa que recibe los datos que trae la API y les quita el formato JSON
+  .then((data) => { // La respuesta de la promesa se introduce en la variable objeto "data", y se ejecuta la siguiente función
     // Imprimir los géneros en la consola
-    data.genres.forEach((genre) => { //iterar el objeto "genres" del objeto "data" (esto ya que el array contiene dos elementos)
-      console.log(genre.name + ":", genre.id); //prueba
+    data.genres.forEach((genre) => { // Iterar el objeto "genres" del objeto "data" (esto ya que el array contiene dos elementos)
+      console.log(genre.name + ":", genre.id); // Prueba
 
-      //creación de cada boton asignandoseles su id y su nombre
+      // Creación de cada botón asignándoles su id y su nombre
       genresSection.innerHTML += `
       <button type="button" class="genre-btn" id="${genre.id}" name="${genre.name}">
       ${genre.name}
   </button>`;
     });
   })
-  .catch((err) => console.error(err)); //en caso de que fetch no pueda recibir los datos de la api, se devuelve un mensaje "error" a la consola
+  .catch((err) => console.error(err)); // En caso de que fetch no pueda recibir los datos de la API, se devuelve un mensaje "error" a la consola
 
-
-//evento de creacion de generos seleccionados
+// Evento de creación de géneros seleccionados
 genresSection.addEventListener("click", (event) => {
   let id = event.target.getAttribute("id");
   let name = event.target.getAttribute("name");
-  genreSel(id, name); //añadir genero al array "selectedGenre"
-  showSelectedGenres(id, name); //mostrar los generos de este array en su contenedor
+  genreSel(id, name); // Añadir género al array "selectedGenre"
+  showSelectedGenres(id, name); // Mostrar los géneros de este array en su contenedor
 });
 
-//evento de eliminacion de generos seleccionados
+// Evento de eliminación de géneros seleccionados
 genresSelected.addEventListener("click", (event) => {
   let id = event.target.getAttribute("id");
   deleteGenre(id);
 });
 
-//añadidor de generos al array
+// Añadidor de géneros al array
 function genreSel(idGenreSelected, nameGenreSelected) {
   selectedGenre[idGenreSelected] = nameGenreSelected;
-  console.log(selectedGenre); //prueba 
+  console.log(selectedGenre); // Prueba 
 }
 
-//mostrar los generos seleccionados
+// Mostrar los géneros seleccionados
 function showSelectedGenres() {
-  genresSelected.innerHTML = ""; //limpiar contenedor de lo generos seleccionados
-  let genresCounter = 0; //contador de los generos que han sido seleccionados
-  for (const idGenreSelected of Object.keys(selectedGenre)) { //iteracion del objeto "selectedGenre" que imprime en el contenedor "genresSelected" cada genero seleccionado
-    if (genresCounter < 3) { //cantidad maxima de generos admitible
+  genresSelected.innerHTML = ""; // Limpiar contenedor de los géneros seleccionados
+  let genresCounter = 0; // Contador de los géneros que han sido seleccionados
+  for (const idGenreSelected of Object.keys(selectedGenre)) { // Iteración del objeto "selectedGenre" que imprime en el contenedor "genresSelected" cada género seleccionado
+    if (genresCounter < 3) { // Cantidad máxima de géneros admitible
       genresSelected.innerHTML += ` 
-      <button type="button" class="genre-btn" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; //creación de botones con cada genero seleccionado
+      <button type="button" class="genre-btn" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; // Creación de botones con cada género seleccionado
       genresCounter++;
     } else {
-      alert("el maximo de generos agregable es 3"); //alerta en caso de que se supere la capacidad maxima
-      delete selectedGenre[idGenreSelected]; //eliminar genero sobrante del objeto "selectedGenre"
+      alert("el máximo de géneros agregable es 3"); // Alerta en caso de que se supere la capacidad máxima
+      delete selectedGenre[idGenreSelected]; // Eliminar género sobrante del objeto "selectedGenre"
     }
   }
 }
 
-//eliminar los generos seleccionados
+// Eliminar los géneros seleccionados
 function deleteGenre(idGenreSelected) {
   delete selectedGenre[idGenreSelected];
   showSelectedGenres();
 }
 
-//mandar el id de los generos al array "genres"
-botonSearch.addEventListener("click", function searchMovie() {
-  //array de generos seleccionados
-  const genres = Object.keys(selectedGenre); //creacion del array "genres"
-  console.log("GENEROS SELECCIONADOS:", genres); //prueba 
-
-  //input check-switch para indicar si una pelicula es para adultos? (eliminar si no va a usarse)
-  // const checkboxInput = document.getElementById("flexSwitchCheckDefault");
-  // const estadoCheckbox = checkboxInput.checked;
-  // console.log("ESTADO DEL SWITCH (18?): ", estadoCheckbox); //prueba
+// Mandar el id de los géneros al array "genres"
+botonSearch.addEventListener("click", function() {
+  // Array de géneros seleccionados
+  let genresA = Object.keys(selectedGenre); // Creación del array "genres"
+  console.log("GÉNEROS SELECCIONADOS:", genresA); 
+  genres.push(...genresA) //añadir al array "genres" los elementos del array "genresA" de esta función
+  genreString = genres.join(",")
 });
+
+botonSearch2.addEventListener("click", function () {
+  console.log("PRUEBA QUE EL ARRAY SALIÓ DEL EVENTO: ",genreString)
+})
