@@ -27,20 +27,28 @@
     <main>
         <section class="movie d-flex">
             <img class="background-movie" src="../../public/img/img-monja.jpg" alt="">
-            <article class="container-one d-flex justify-content-center align-items-end ps-5 ">
-                <div class="container-info d-flex ">
-                    <div class="d-flex flex-column">
-                        <h1 class="title-movie fw-bold ">LA MONJA</h1>
+            <article class="container-one d-flex justify-content-center align-items-end ps-5">
+                <!-- <div class="container-info d-flex "> -->
+                <div class="container-info d-flex flex-column flex-md-row">
+                    <h1 class="title-movie fw-bold mb-3 mb-md-0">LA MONJA</h1>
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="bi bi-star-fill star"></i>
+                        <p class="rating-movie mb-0">5.0</p>
+                    </div>
+                </div>
+
+                <!-- <div class="d-flex flex-column">
+                        <h1 class="title-movie fw-bold ">LA MONJA</h1>     ORIGINAL
                         <div class="d-flex gap-3 justify-content-center">
                             <i class="bi bi-star-fill"></i>
                             <p class="rating-movie">5.0</p>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="container-buttons d-flex gap-4 align-items-center">
-                        <button class="btn" type="submit">Re Match</button>
-                        <button class="btn" type="submit">Match</button>
-                    </div>
+                <div class="container-buttons"> <!--margin-right: 100px;-->
+                    <button class="btn" type="submit">Re Match</button>
+                    <button class="btn" type="submit">Match</button>
+                </div>
                 </div>
             </article>
 
@@ -51,23 +59,24 @@
 
                 <div class="container-description text-center p-5">
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis quod ratione quos
-                        fuga repellat illo laboriosam voluptatum, sunt veniam ipsum voluptates adipisci iusto porro
-                        eaque sint vel quasi quam.
+                        Cuando una joven monja se suicida en una abadía de clausura en Rumanía, un sacerdote experto en
+                        posesiones demoniacas y una novicia a punto de tomar sus votos, son enviados por el Vaticano
+                        para investigar. Juntos descubren el profano secreto de la orden.
                     </p>
                 </div>
                 <div class="avaliable d-flex gap-5 justify-content-center mb-4 ">
-                    <h2>Avaliable in:</h2>
+                    <h2 class="avaliabletext">Avaliable in:</h2>
                     <div>
-                        <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable"></a>
-                        <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable"></a>
-                        <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable"></a>
+                        <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
+                        <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
+                        <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
                     </div>
                 </div>
 
                 <div class="d-flex flex-column  gap-4 justify-content-center align-items-center ">
-                    <h2>Contract with us 50% off</h2>
-                    <a class="whatsapp"  href="https://web.whatsapp.com/" target="_blank">CLICK HERE <i class="bi bi-whatsapp whatsapp"></i>
+                    <h2 class="contract">Contract with us 50% off</h2>
+                    <a class="whatsapp" href="https://web.whatsapp.com/" target="_blank">CLICK HERE <i
+                            class="bi bi-whatsapp whatsapp"></i>
                 </div>
             </article>
         </section>
