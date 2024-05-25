@@ -61,7 +61,7 @@ function showSelectedGenres() {
   for (const idGenreSelected of Object.keys(selectedGenre)) { //iteracion del objeto "selectedGenre" que imprime en el contenedor "genresSelected" cada genero seleccionado
     if (genresCounter < 3) { //cantidad maxima de generos admitible
       genresSelected.innerHTML += ` 
-      <button type="button" class="genre-btn ms-5" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; //creación de botones con cada genero seleccionado
+      <button type="button" class="genre-btn" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; //creación de botones con cada genero seleccionado
       genresCounter++;
     } else {
       alert("el maximo de generos agregable es 3"); //alerta en caso de que se supere la capacidad maxima
@@ -83,7 +83,7 @@ botonSearch.addEventListener("click", function searchMovie() {
   console.log("GENEROS SELECCIONADOS:", genres); //prueba 
 
   //input check-switch para indicar si una pelicula es para adultos? (eliminar si no va a usarse)
-  const checkboxInput = document.getElementById("flexSwitchCheckDefault");
-  const estadoCheckbox = checkboxInput.checked;
-  console.log("ESTADO DEL SWITCH (18?): ", estadoCheckbox); //prueba
+  // const checkboxInput = document.getElementById("flexSwitchCheckDefault");
+  // const estadoCheckbox = checkboxInput.checked;
+  // console.log("ESTADO DEL SWITCH (18?): ", estadoCheckbox); //prueba
 });
