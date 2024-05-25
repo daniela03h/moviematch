@@ -14,7 +14,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
     <meta name="revisit-after" content="15days" />
-    <link rel="shortcut icon" href="./public/icons/favicon-moviematch.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./icons/favicon-moviematch.ico" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selecciona los generos que te gustan!!</title>
@@ -49,9 +49,10 @@
         id="genres"
         class="container d-flex gap-1 flex-wrap align-content-center justify-content-center"
       ></section>
-      <button class="gradient-button m-3" onclick="searchMovie()">GIVE ME A MOVIE!</button>
+      <button id="search" class="gradient-button m-3">GIVE ME A MOVIE!</button>
     </main>
     <footer></footer>
-    <script src="../genresSelection.js"></script>
+    <script type="module" src="../js/genresSelection.js"></script>
+ 
   </body>
 </html>
