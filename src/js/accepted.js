@@ -1,17 +1,5 @@
-import '../scss/styles.scss';
+import '../scss/accepted.scss';
 import * as bootstrap from 'bootstrap'
-
-//se realiza un evento para cuando se haga scroll
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('nav')
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 10) {
-            navbar.classList.add("nav-scrolled-background")
-        } else {
-            navbar.classList.remove("nav-scrolled-background")
-        }
-    })
-})
 
 // traer elementos del HTML
 const sliderContainer = document.getElementById("movie-trends");
@@ -97,4 +85,3 @@ function renderMovierCardMobile(trendMovie, index) {
 </div>
     `
 }
-
