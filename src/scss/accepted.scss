@@ -1,0 +1,122 @@
+@import url(./normalize.scss);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+$faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
+$dark-purple: #0F001E;
+$light-purple: #3E2E57;
+$light-grey: #EFEFEF;
+$grey: #9D9D9C;
+$blue: #0E41E8;
+$white: #FFFFFF;
+$black: #000;
+
+.container-accepted {
+background: $dark-purple;
+color: $white;
+position: relative;
+margin-top: 60px;
+}
+
+.container-logo {
+    border-radius: 100%;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-content: center;
+    top: -60px;
+    background-color: $dark-purple;
+}
+
+// .stars {
+//     position: absolute;
+// }
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: $dark-purple;
+}
+
+.btn{
+    width: 55%;
+    height: 40px;
+    border-radius: 60px;
+    background: $faded-blue;
+    border: none;
+    color: $white;
+    font-weight: 1000;
+    font-size: large;
+}
+
+// carrusel
+.carousel-item {
+    transition-duration: 1000ms;
+    transition-delay: 0ms;
+    transition-property: unset;
+}
+
+#movie-slider {
+    display: none;
+}
+
+#movie-slider-mobile {
+    display: block;
+}
+
+.flip-card {
+    width: 100%;
+    height: 750px;
+    perspective: 1000px; // efecto 3d
+}
+
+// posiciona la parte delantera y trasera
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+// voltea la tarjeta al pasar el mouse
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+//coloca parte delantera y trasera
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background-color: $dark-purple;
+    transform: rotateY(180deg);
+    overflow: scroll;
+}
+
+@media screen and (min-width: 992px) {
+    #movie-slider {
+        display: block;
+    }
+
+    #movie-slider-mobile {
+        display: none;
+    }
+
+    .flip-card {
+        width: 500px;
+        height: 420px;
+    }
+}
