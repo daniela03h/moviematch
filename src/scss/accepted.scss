@@ -19,8 +19,8 @@ $black: #000;
 .container-accepted {
 background: $dark-purple;
 color: $white;
-margin-top: 33%;
 position: relative;
+margin-top: 60px;
 }
 
 .container-logo {
@@ -33,6 +33,10 @@ position: relative;
     top: -60px;
     background-color: $dark-purple;
 }
+
+// .stars {
+//     position: absolute;
+// }
 
 .logo {
     width: 80px;
@@ -49,4 +53,70 @@ position: relative;
     color: $white;
     font-weight: 1000;
     font-size: large;
+}
+
+// carrusel
+.carousel-item {
+    transition-duration: 1000ms;
+    transition-delay: 0ms;
+    transition-property: unset;
+}
+
+#movie-slider {
+    display: none;
+}
+
+#movie-slider-mobile {
+    display: block;
+}
+
+.flip-card {
+    width: 100%;
+    height: 750px;
+    perspective: 1000px; // efecto 3d
+}
+
+// posiciona la parte delantera y trasera
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+// voltea la tarjeta al pasar el mouse
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+//coloca parte delantera y trasera
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background-color: $dark-purple;
+    transform: rotateY(180deg);
+    overflow: scroll;
+}
+
+@media screen and (min-width: 992px) {
+    #movie-slider {
+        display: block;
+    }
+
+    #movie-slider-mobile {
+        display: none;
+    }
+
+    .flip-card {
+        width: 500px;
+        height: 420px;
+    }
 }
