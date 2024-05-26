@@ -74,7 +74,7 @@ botonSearch.addEventListener("click", function() {
   genres.push(...genresA)
   const genresString = genres.join(',')
     console.log(genres);
-    window.location.href = "../pages/hola.html"
+    window.location.href = "http://localhost:5173/src/pages/match.html"
 //   callingMoviesByGenres(genresString);
   localStorage.setItem("genres", genresString)
 

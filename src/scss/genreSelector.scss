@@ -3,10 +3,21 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+$faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
+$dark-purple: #0F001E;
+$light-purple: #3E2E57;
+$light-grey: #EFEFEF;
+$grey: #9D9D9C;
+$blue: #0E41E8;
+$white: #FFFFFF;
+$black: #000;
+
 * {
-  font-family: "Roboto", sans-serif;
-  background-color: #0f001e;
+    color: $white;
+    font-family: "Roboto", sans-serif;
+    background-color: $dark-purple;
 }
+
 
 main{
   margin-top: 100px;
@@ -15,35 +26,31 @@ main{
 .genre-btn {
   padding: 10px;
   margin: 7px;
-  color: #efefef;
-  border: 2px solid #efefef;
+  color: $white;
+  border: 2px solid $white;
   border-radius: 10px;
   background-color: transparent;
 
   &:hover {
     transition: 0.4s;
-    background-color: #9d9d9c;
+    background-color:$grey;
   }
 }
 
-.gradient-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-image: linear-gradient(
-    to right,
-    #0e41e8 0%,
-    #195beb 37%,
-    #227ae8 69%,
-    #32dde4 100%
-  );
+.btn {
+  width: 300px;
+  height: 40px;
+  border-radius: 60px;
+  background: $faded-blue;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  color: $white;
+  font-weight: 1000;
+  font-size: large;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 // Estilo para los titulos
 .titles {
   font-size: 30px;
-  color: white;
 }

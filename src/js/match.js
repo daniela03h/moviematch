@@ -1,21 +1,25 @@
 import '../scss/match.scss';
 import * as bootstrap from 'bootstrap'
 
+import {callingMoviesByGenres} from "./api"
+import {options} from "./api"
+// import { callingMoviesByGenres } from "./api"
+import { getProviders } from "./api"
+let contenedor = document.querySelector('#container-movies')
+const generos = localStorage.getItem("genres")
+let movies = JSON.parse(localStorage.getItem("movies"))
+console.log(movies);
 
-// Funcion para actualizar imagen cuando el usuario escoja una pelicula diferente
 
-// Obtenemos todas las imágenes de películas
-const movieImages = document.querySelectorAll('.imgSmall');
-// Obtenemos la imagen grande
-const bigImage = document.querySelector('.fund');
+callingMoviesByGenres(generos,contenedor,0)
 
-// Añadimos un evento de clic a cada imagen de película
-movieImages.forEach(image => {
-    image.addEventListener('click', () => {
-        // Actualizamos la imagen grande con la imagen de la película clicada
-        bigImage.src = image.src;
-    });
+
+movies?.forEach(movie => {
+    getProviders(JSON.stringify(movie.id))
+    // console.log("IDDD",movie.id);
 });
+
+localStorage.removeItem("movies")
 
 
 

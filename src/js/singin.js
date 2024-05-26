@@ -20,7 +20,7 @@ form.addEventListener('submit', async(event) => {
 
             localStorage.setItem("userOnline", JSON.stringify(user))  //GUARDAMOS LA SESION DEL USUARIO EN EL LOCAL STORAGE
 
-            window.location.href = "./src/pages/index.html"
+            window.location.href = "http://localhost:5173/src/pages/genreSelector.html"
         }else{
             alert("Contraseña Incorrecta")
         }

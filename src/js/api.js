@@ -26,8 +26,9 @@ export async function callingGenres(site) {
 // ######################################################################################################################################
 
 
-
-export  async function callingMoviesByGenres(genres,sitio,movieMatched) {
+let localMovieMatched = 0
+export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
+  localMovieMatched =movieMatched
   let url = "https://image.tmdb.org/t/p/w500/"
   let movies = [];
   let page = 1;
@@ -41,12 +42,78 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched) {
       page++;
     }
     localStorage.setItem("movies",  JSON.stringify(movies));
-    const movie = movies[movieMatched]
+    const movie = movies[localMovieMatched]
     localStorage.setItem("movies",(movie.title,url+movie.backdrop_path,movie.overview,movie.id,url+movie.poster_path));
     ids = ids.concat(movie.id);
     localStorage.setItem("ids",ids)
     sitio.innerHTML = `
-    <div class="col-md-3 col-sm-6 col-12">
+    <main id="container-movies">
+    <section class="movie d-flex">
+        <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
+        <article class="container-one d-flex justify-content-center align-items-end ps-5">
+            <!-- <div class="container-info d-flex "> -->
+            <div class="container-info d-flex flex-column flex-md-row">
+                <h1 class="title-movie fw-bold mb-3 mb-md-0">${movie.title}</h1>
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-star-fill star"></i>
+                    <p class="rating-movie mb-0">5.0</p>
+                </div>
+            </div>
+
+            <!-- <div class="d-flex flex-column">
+                    <h1 class="title-movie fw-bold ">${movie.title}</h1>     ORIGINAL
+                    <div class="d-flex gap-3 justify-content-center">
+                        <i class="bi bi-star-fill"></i>
+                        <p class="rating-movie">5.0</p>
+                    </div>
+                </div> -->
+
+            <div class="container-buttons"> <!--margin-right: 100px;-->
+                <button class="btn-rematch btn" type="button">Re Match</button>
+                <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
+            </div>
+            </div>
+        </article>
+
+        <article class="container-two d-flex flex-column">
+            <div class="container-image-small d-flex justify-content-center">
+                <img class="movie-small" src="${url+movie.backdrop_path}" alt=""> <!--imagen pequeña -->
+            </div>
+
+            <div class="container-description text-center p-5">
+                <p>
+                ${movie.overview}
+                </p>
+            </div>
+            <div class="avaliable d-flex gap-5 justify-content-center mb-4 ">
+                <h2 class="avaliabletext">Avaliable in:</h2>
+                <div>
+                    <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
+                    <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
+                    <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column  gap-4 justify-content-center align-items-center ">
+                <h2 class="contract">Contract with us 50% off</h2>
+                <a class="whatsapp" href="https://web.whatsapp.com/" target="_blank">CLICK HERE <i
+                        class="bi bi-whatsapp whatsapp"></i>
+            </div>
+        </article>
+    </section>
+    `; 
+    let btnRematch = document.querySelector(".btn-rematch")
+    btnRematch.addEventListener("click", ()=>{
+      let contenedor = document.querySelector('#container-movies')
+      const generos = localStorage.getItem("genres")
+      localMovieMatched+=1
+      callingMoviesByGenres(generos,contenedor,localMovieMatched)
+  })
+  }
+
+  
+
+{/* <div class="col-md-3 col-sm-6 col-12">
     <div class="card">
       <img src="${url+movie.backdrop_path}" class="card-img-top" alt="...">
       <div class="card-body">
@@ -59,12 +126,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched) {
         <small class="text-muted">ID: ${movie.id}</small>
       </div>
     </div>
-    </div>
-    `; 
-  }
-
-
-
+    </div> */}
 // #######################################################################################################################################
 
 //TREND LIST
