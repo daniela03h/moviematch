@@ -20,11 +20,163 @@
 </head>
 
 <body>
+    <div class="container-img-desktop"></div>
     <header>
-        <h1>hola</h1>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid d-lg-flex justify-content-lg-around ">
+
+                <a class="navbar-brand" href="">
+                    <img class="logo" src="./public/img/logo-white-MovieMatch.png" alt="">
+                </a>
+                <div class="d-flex flex-row gap-3 container-sing">
+                    <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
+                            aria-current="page" href="#">SING IN </a> <img class="icon-sing" src="./public/img/sing.png"
+                            alt=""></div>
+                    <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
+                            aria-current="page" href="#">SING UP </a> <img class="icon-sing" src="./public/img/sing.png"
+                            alt=""></div>
+                </div>
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-lg-center  " id="navbarNavAltMarkup">
+                    <div class="navbar-nav gap-lg-5 ">
+                        <a class="nav-link active title-header" aria-current="page" href="#home">HOME</a>
+                        <a class="nav-link active title-header" aria-current="page" href="#info">INFO</a>
+                        <a class="nav-link active title-header" aria-current="page" href="#trends">TRENDS</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main></main>
-    <footer></footer>
+
+    <main class="container">
+        <section class="home d-flex justify-content-around" id="home">
+            <article class="article-description">
+                <h1>Don't know what to watch?</h1>
+                <p>Let us be your MovieMatch!!</p>
+            </article>
+            <article class="match-button">
+                <div class="container-button-movie"><button class="button-moviematch"><img class="logo-button"
+                            src="./public/img/logo-white-MovieMatch.png" alt="">Click Here</button></div>
+            </article>
+        </section>
+
+        <section class="info d-flex flex-column  justify-content-center align-items-center " id="info">
+            <article
+                class="container-info d-flex flex-column flex-lg-row justify-content-lg-center align-items-center gap-5 p-5">
+                <div class="d-flex justify-content-center info-reverse"><img class="w-50" src="./public/img/hook.png"
+                        alt="">
+                </div>
+                <div class="info-description">
+                    <h3>Match with your favorite series or movie</h3>
+                    <p>Enjoy your time watching what you like most.</p>
+                </div>
+            </article>
+            <article
+                class="container-info d-flex flex-column flex-lg-row justify-content-lg-center align-items-center gap-5 p-5">
+                <div class="d-flex justify-content-center "><img class="w-50" src="./public/img/camara.png" alt="">
+                </div>
+                <div class="info-description">
+                    <h3>Enjoy the best recommendations</h3>
+                    <p>The best options to share with family and friends.</p>
+                </div>
+            </article>
+            <article
+                class="container-info container-info-2 d-flex flex-column flex-lg-row justify-content-lg-center align-items-center gap-5 p-5">
+                <div class="d-flex justify-content-center info-reverse "><img class="w-50"
+                        src="./public/img/devices.png" alt="">
+                </div>
+                <div class="info-description">
+                    <h3>Enjoy wherever you want </h3>
+                    <p>On your phone, tablet, laptop and tv.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="trends">
+            <article>
+                <h2 class="text-center mt-lg-5 ">TRENS LIST</h2>
+                <div></div>
+            </article>
+
+             <!-- carrusel desktop-->
+            <section id="movie-slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <article class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <div id="movie-trends" class="d-flex">
+                            <!-- acá se meten todas las peliculas -->
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div id="movie-trends2" class="d-flex">
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div id="movie-trends3" class="d-flex">
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div id="movie-trends4" class="d-flex">
+                        </div>
+                    </div>
+                </article>
+                <button class="carousel-control-prev" type="button" data-bs-target="#movie-slider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#movie-slider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </section>
+
+
+            <!-- carrusel mobile -->
+            <section id="movie-slider-mobile" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <article class="carousel-inner mobile-carousel">
+                    <!-- se meten las peliculas -->
+                </article>
+                <button class="carousel-control-prev" type="button" data-bs-target="#movie-slider-mobile"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#movie-slider-mobile"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </section>
+        </section>
+
+        <a href="./src/pages/accepted.html">DANIELA</a>
+    </main>
+
+    <footer class="footer d-lg-flex justify-content-lg-around ">
+        <section class="d-flex justify-content-center align-items-center gap-3 container-logo-footer">
+            <img class="logo" src="./public/img/logo-white-MovieMatch.png" alt="">
+            <div class="pt-3 container-name-footer ps-3 ">
+                <span>MovieMatch Entertainment</span>
+            </div>
+        </section>
+
+        <section class="d-flex flex-column align-items-center">
+            <p class="m-0 p-3 ">Copyright @MovieMatch.....</p>
+            <article class="pb-3">
+                <a class="social-networks" href="https://www.facebook.com/" target="_blank"><i
+                        class="bi bi-facebook"></i></a>
+                <a class="social-networks" href="https://www.instagram.com/" target="_blank"><i
+                        class="bi bi-instagram"></i></a>
+                <a class="social-networks" href="https://co.linkedin.com/" target="_blank"><i
+                        class="bi bi-linkedin"></i></a>
+                <a class="social-networks" href="https://twitter.com/" target="_blank"><i
+                        class="bi bi-twitter-x"></i></a>
+            </article>
+        </section>
+    </footer>
 
     <script type="module" src="./src/js/main.js"></script>
 </body>
