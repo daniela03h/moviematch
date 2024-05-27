@@ -1,3 +1,4 @@
+//CREAMOS LAS OPCIONES CON LAS QUE VAMOS A CONSUMIR LA API Y LAS EXPORTAMOS
 export const options = {
   method: 'GET',
   headers: {
@@ -6,7 +7,7 @@ export const options = {
   }
 };
 
-// calling genres of the api url and transform it to js object
+// ESTA FUNCION RECIBE EL ATRIBUTO DE DONDE SE VA A HACER EL INNER, EL CUAL SE LO DA EL ARCHIVO GENRESELECTOR.JS
 export async function callingGenres(site) {
     const response = await fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options);
     const data = await response.json();
@@ -25,27 +26,27 @@ export async function callingGenres(site) {
 
 // ######################################################################################################################################
 
-
-let localMovieMatched = 0
+////CREAMOS UNA FUNCION QUE BUSCA LAS PELICULAS POR GENEROS, RECIBE LOS GENEROS Y EL LUGAR DONDE SE VAN A INSERTAR, ADEMAS LLEVA UN CONTADOR DE CADA VEZ QUE SE HACE REMATCH
+let localMovieMatched = 0 //CREAMOS UNA VARIABLE GLOBAL QUE VA A TOMAR LOS VALORES DE EL CONTADOR QUE ESTA DENTRO DE LA FUNCION
 export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
   localMovieMatched =movieMatched
-  let url = "https://image.tmdb.org/t/p/w500/"
+  let url = "https://image.tmdb.org/t/p/w500/" //ESTA VARIABLE SE PONE AL INICIO DE CADA RUTA DE IMAGEN PARA QUE PUEDA MOSTRARSE DESDE LA RED
   let movies = [];
-  let page = 1;
+  let page = 1; //CONTADOR DE LAS PAGINAS
   let ids = []
-  const maxPage = 8; // MAX PAGES TO GET MOVIES(20 MOVIES PER PAGE)
-  while (page <= maxPage) {
-    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genres}&page=${page}`, options);
-    const data = await response.json();
-      const filteredMovies = data.results.filter(movie => movie.original_language=="en"&&movie.backdrop_path !== null);
-      movies = movies.concat(filteredMovies);
+  const maxPage = 8; // LA API TRAE 20PELICULAS POR PAGINA, POR LO QUE VAMOS A TRAER 8 PAGINAS
+  while (page <= maxPage) { //RECORRE LAS PELICULAS Y VA AUMENTANDO LA PAGINA
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genres}&page=${page}`, options); //LLAMA LAS PELICULASPOR GENEROS Y POR PAGINAS
+    const data = await response.json(); 
+      const filteredMovies = data.results.filter(movie => movie.original_language=="en"&&movie.backdrop_path !== null); //FILTRA LAS PELICULAS PARA QUE LAS QUE QUEDEN SEAN EN INGLES Y CONTENGA IMAGEN
+      movies = movies.concat(filteredMovies); //AÑADE ESTAS PELICULAS A FILTEREDMOVIES
       page++;
     }
-    localStorage.setItem("movies",  JSON.stringify(movies));
-    const movie = movies[localMovieMatched]
-    // localStorage.setItem("movies",(movie.title,url+movie.backdrop_path,movie.overview,movie.id,url+movie.poster_path));
-    ids = ids.concat(movie.id);
-    localStorage.setItem("ids",ids)
+    // localStorage.setItem("movies",  JSON.stringify(movies));
+    const movie = movies[localMovieMatched] //MOSTRAMOS LA PELICULA EN LA POSICION 0, QUE ES A LO QUE EQUIVALE LA VARIABLE
+    // ids = ids.concat(movie.id);
+    // localStorage.setItem("ids",ids)
+    //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
     sitio.innerHTML = `
     <main id="container-movies">
     <section class="movie d-flex">
@@ -102,7 +103,9 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
         </article>
     </section>
     `; 
-    let btnRematch = document.querySelector(".btn-rematch")
+
+    // #####################BOTON REMATCH #########################
+    let btnRematch = document.querySelector(".btn-rematch") //EN ESTE EVENTO VAMOS A AÑADIRLE 1 AL CONTADOR CREADO Y VOLVEMOS A LLAMAR LA FUNCION PARA QUE MUETSRE LA SIGUIENTE PELICULA
     btnRematch.addEventListener("click", ()=>{
       let contenedor = document.querySelector('#container-movies')
       const generos = localStorage.getItem("genres")
@@ -115,31 +118,17 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
 
 // #######################################################################################################################################
 
-//TREND LIST
 
-// async function trendList (){
-//   let trendMovies = []
-//   const response = await fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
-//   const data = await response.json();
-//   const filteredMovies = data.results.filter(movie => movie.original_language=="en")
-//       trendMovies = trendMovies.concat(filteredMovies);
-//   // console.log(trendMovies);  //array with trend list of movies
-  
-// }
+// #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
 
-// trendList()
-
-
-//MOVIE PROVIDERS IMAGE
-
- export async function getProviders(id) {
+export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSCAR 
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?watch_region=CO`, options)
   const data = await response.json();
   // console.log(data.results.CO.rent);
-  let url = "https://image.tmdb.org/t/p/w500/"
-  let providers = await data.results.CO?.rent 
-  await providers?.forEach(plataform => {
-    if(providers !== null){
+  let url = "https://image.tmdb.org/t/p/w500/" //URL PARA QUE MUESTRTE LAS IMAGENES
+  let providers = await data.results.CO?.rent  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
+  await providers?.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
+    if(providers !== null){                     
       console.log(id, ":",url+plataform.logo_path)
     }else{
       console.log(id,"no hayy");

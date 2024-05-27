@@ -26,11 +26,11 @@ window.addEventListener("load", () => {
         </a>
     <div class="d-flex flex-row gap-3 container-sing">
         <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
-                aria-current="page" href="./src/pages/singin.html">SING IN </a> <img class="icon-sing" src="./public/img/sing.png"
+                aria-current="page" href="./src/pages/singin.html">SIGN IN </a> <img class="icon-sing" src="./public/img/sing.png"
                 alt="">
         </div>
         <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
-                aria-current="page" href="./src/pages/singup.html">SING UP </a> <img class="icon-sing" src="./public/img/sing.png"
+                aria-current="page" href="./src/pages/singup.html">SIGN UP </a> <img class="icon-sing" src="./public/img/sing.png"
                 alt="">
         
         </div>
