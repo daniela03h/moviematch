@@ -16,11 +16,21 @@ $blue: #0E41E8;
 $white: #FFFFFF;
 $black: #000;
 
+body{
+    background-color: $dark-purple;
+    color: $white;
+}
+
+.main-title{
+    font-weight: 900;
+}
+
 .container-accepted {
-background: $dark-purple;
-color: $white;
+background: $white;
+color: $black;
 position: relative;
 margin-top: 60px;
+border-radius: 30px;
 }
 
 .container-logo {
@@ -31,7 +41,7 @@ margin-top: 60px;
     display: grid;
     place-content: center;
     top: -60px;
-    background-color: $dark-purple;
+    background-color: $white;
 }
 
 // .stars {
@@ -41,7 +51,7 @@ margin-top: 60px;
 .logo {
     width: 80px;
     height: 80px;
-    background: $dark-purple;
+    background:$white;
 }
 
 .btn{
