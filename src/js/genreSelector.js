@@ -13,10 +13,9 @@ let genres=[];
 
 const botonSearch = document.getElementById("search");
 
-console.log(moviesec);
-
 window.addEventListener("load", () => {
-    localStorage.clear()
+    localStorage.removeItem("genres")
+    localStorage.removeItem("ids")
 })
 
 // Llamado a la API recomendado por TMDB (la API que se está utilizando)

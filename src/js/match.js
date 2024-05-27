@@ -7,16 +7,14 @@ import {options} from "./api"
 import { getProviders } from "./api"
 let contenedor = document.querySelector('#container-movies')
 const generos = localStorage.getItem("genres")
-let movies = JSON.parse(localStorage.getItem("movies"))
-console.log(movies);
-
+let movies = JSON.parse((localStorage.getItem("movies")))
 
 callingMoviesByGenres(generos,contenedor,0)
+console.log(movies);
 
-
-movies?.forEach(movie => {
+movies.forEach(movie => {
     getProviders(JSON.stringify(movie.id))
-    // console.log("IDDD",movie.id);
+    console.log("IDDD",movie.id);
 });
 
 localStorage.removeItem("movies")

@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap'
-
+const sectionUser = document.querySelector("#pedro")
+console.log(sectionUser);
 //se realiza un evento para cuando se haga scroll
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('nav')
@@ -12,6 +13,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
+window.addEventListener("load", () => {
+    // Recuperamos el item del localStorage
+    const userOnline = localStorage.getItem("userOnline");
+    console.log(userOnline); // Verificar en la consola si existe y es el esperado
+  
+    if (userOnline === null) {
+      // Si no hay usuario en línea, mostramos opciones de Sing In y Sing Up
+      sectionUser.innerHTML = `
+        <a class="navbar-brand" href="">
+        <img class="logo" src="./public/img/logo-white-MovieMatch.png" alt="">
+        </a>
+    <div class="d-flex flex-row gap-3 container-sing">
+        <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
+                aria-current="page" href="./src/pages/singin.html">SING IN </a> <img class="icon-sing" src="./public/img/sing.png"
+                alt="">
+        </div>
+        <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
+                aria-current="page" href="./src/pages/singup.html">SING UP </a> <img class="icon-sing" src="./public/img/sing.png"
+                alt="">
+        
+        </div>
+    </div>
+
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-lg-center  " id="navbarNavAltMarkup">
+        <div class="navbar-nav gap-lg-5 ">
+            <a class="nav-link active title-header" aria-current="page" href="#home">HOME</a>
+            <a class="nav-link active title-header" aria-current="page" href="#info">INFO</a>
+            <a class="nav-link active title-header" aria-current="page" href="#trends">TRENDS</a>
+        </div>
+    </div>`;
+    } else {
+      // Si hay un usuario en línea, mostramos su información
+      const user = JSON.parse(userOnline);
+      sectionUser.innerHTML = `
+      <a class="navbar-brand" href="">
+      <img class="logo" src="./public/img/logo-white-MovieMatch.png" alt="">
+  </a>
+  <div class="d-flex flex-row gap-3 container-sing">
+        <div class="d-flex align-items-center gap-1">
+          <p class="username" aria-current="page">${user.username}</p> 
+          <img class="icon-user" src="${user.icon}" alt="">
+        </div>
+        <div class="d-flex align-items-center gap-1">
+        <button id="logout" type="button" class="btn">Logout</button>
+  </div>
+  </div>
+  <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-lg-center  " id="navbarNavAltMarkup">
+      <div class="navbar-nav gap-lg-5 ">
+          <a class="nav-link active title-header" aria-current="page" href="#home">HOME</a>
+          <a class="nav-link active title-header" aria-current="page" href="/src/pages/genreSelector.html">DO A MATCH!</a>
+          <a class="nav-link active title-header" aria-current="page" href="#info">INFO</a>
+          <a class="nav-link active title-header" aria-current="page" href="#trends">TRENDS</a>
+
+      </div>
+  </div>`;;
+      let logout = document.querySelector("#logout")
+      logout.addEventListener("click", () => {
+        localStorage.removeItem("userOnline");
+        location.reload();
+      });
+    }
+  });
 
 // traer elementos del HTML
 const sliderContainer = document.getElementById("movie-trends");

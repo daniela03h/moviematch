@@ -43,7 +43,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
     }
     localStorage.setItem("movies",  JSON.stringify(movies));
     const movie = movies[localMovieMatched]
-    localStorage.setItem("movies",(movie.title,url+movie.backdrop_path,movie.overview,movie.id,url+movie.poster_path));
+    // localStorage.setItem("movies",(movie.title,url+movie.backdrop_path,movie.overview,movie.id,url+movie.poster_path));
     ids = ids.concat(movie.id);
     localStorage.setItem("ids",ids)
     sitio.innerHTML = `
@@ -56,7 +56,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
                 <h1 class="title-movie fw-bold mb-3 mb-md-0">${movie.title}</h1>
                 <div class="d-flex align-items-center gap-3">
                     <i class="bi bi-star-fill star"></i>
-                    <p class="rating-movie mb-0">5.0</p>
+                    <p class="rating-movie mb-0">${movie.vote_average}</p>
                 </div>
             </div>
 
@@ -113,20 +113,6 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
 
   
 
-{/* <div class="col-md-3 col-sm-6 col-12">
-    <div class="card">
-      <img src="${url+movie.backdrop_path}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${movie.title}</h5>
-        <p class="card-text">${movie.overview}</p>
-        <p class="card-text">${movie.overview}</p>
-        <p class="card-text">${movie.overview}</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">ID: ${movie.id}</small>
-      </div>
-    </div>
-    </div> */}
 // #######################################################################################################################################
 
 //TREND LIST
@@ -161,28 +147,3 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
     //RETURN URL IMAGE TO PROVIDERS
   });
 }
-
-// getProviders(823464)
-
-//MATCH MOVIE //ASIGN SELECTED MOVIE INTO USER WITH KEY SELECTEDMOVIE
-
-// async function selectedMovie (){
-//    function registerUser (user,lastName,email,password) {
-    
-//     const  newUser = {
-//          username: user.value.toLowerCase(),
-//          lastName: lastName.value.toLowerCase(),
-//          email: email.value,
-//          password:  password.value
-//      }
- 
-//      await fetch (`http://localhost:3000/users`,{
-//      method: 'POST',
-//      headers: {
-//          'Content-Type': 'application/json'
-//      },
-//      body: JSON.stringify(newUser)    //EN BODY COLOCAMOS EL JSON QUE VAMOS A GUARDAR EN LA DB (TAMBIEN LO CONVERTIMOS A JSON)
-//  })
- 
-//  }
-// }

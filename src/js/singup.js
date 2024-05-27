@@ -17,7 +17,7 @@ form.addEventListener("submit", async (event) => {
   const sIcon = selectedIcon; //LAMAMOS LA URL DE LOS ICONOS
   if (checkPassword && checkEmail) {
     await registerUser(username, email, password, sIcon);
-    window.location.href = "/"; //ESTO SIRVE PARA MOVERNOS DESDE EL JAVASCRIPT A OTRAS VENTANAS
+    window.location.href = "http://localhost:5173/src/pages/singin.html"; //ESTO SIRVE PARA MOVERNOS DESDE EL JAVASCRIPT A OTRAS VENTANAS
   } else {
     alert("Las contraseñas no coinciden");
   }
