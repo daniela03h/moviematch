@@ -137,6 +137,33 @@
       "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
       "favMovies": [],
       "notFavMovies": []
+    },
+    {
+      "id": "3d8d",
+      "username": "daniela",
+      "email": "daniela0393h@gmail.com",
+      "password": "123",
+      "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/corte-de-pelo-olivia-wilde-cara-cuadrada.jpeg",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "9f20",
+      "username": "daniela",
+      "email": "daniela@gmail.com",
+      "password": "123",
+      "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/corte-de-pelo-olivia-wilde-cara-cuadrada.jpeg",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "d324",
+      "username": "daniela",
+      "email": "daniela12@gmail.com",
+      "password": "098",
+      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
+      "favMovies": [],
+      "notFavMovies": []
     }
   ]
 }

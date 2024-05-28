@@ -1,14 +1,11 @@
 import "../scss/genreSelector.scss";
 import * as bootstrap from "bootstrap";
-import { options } from "./api"
 import { callingGenres } from "./api"
-import { callingMoviesByGenres } from "./api";
 
 let genresSection = document.getElementById("genres"); //SE LLAMA ESTA SESION Y SE PONE COMO ATRIBUTO EN LA FUNCION DE LLAMAR GENEROS PARA QUE ESTA LOS PINTE EN ESE CONTENEDOR
 let genresSelected = document.getElementById("selected-genres"); //EN ESTE CONTENEDOR SE PINTAN LOS GENEROS QUE SE VAN SELECCIONANDO
 let selectedGenre = {};
 let genres = [];
-
 const botonSearch = document.getElementById("search");
 
 //CADA QUE SE CARGA LA PAGINA SE ELIMINAN LOS GENEROS SELECCIONADOS Y LOS IDS QUE DEVOLVIO LA API PARA EVITAR ERORES
@@ -23,7 +20,7 @@ window.addEventListener("load", () => {
 callingGenres(genresSection)
 
 
-// Evento de creación de géneros seleccionados arriba del titulo
+// Evento de creación de géneros seleccionados 
 genresSection.addEventListener("click", (event) => {
   let id = event.target.getAttribute("id");
   let name = event.target.getAttribute("name");
@@ -74,7 +71,6 @@ botonSearch.addEventListener("click", function () {
   window.location.href = "http://localhost:5173/src/pages/match.html"
   //   enviamos el array de los generos al localstorage para consumirlos en el archivo api
   localStorage.setItem("genres", genresString)
-
 });
 
 

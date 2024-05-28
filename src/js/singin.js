@@ -1,12 +1,9 @@
 import '../scss/singin.scss';
 import * as bootstrap from 'bootstrap'
 
-//call form and inputs 
-
+//Llamar inputs de formato
 const form = document.querySelector('form')
-
 const email = document.querySelector('#email')
-
 const password = document.querySelector('#password')
 
 
