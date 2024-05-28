@@ -47,6 +47,7 @@ async function trendList() {
     });
 }
 
+//funcion que renderiza las trendlist desktop
 function renderMovieCard(trendMovie) {
     return `
     <div class="flip-card mt-5 mb-5">
@@ -64,9 +65,7 @@ function renderMovieCard(trendMovie) {
 
 trendList();
 
-
-
-
+//funcion que renderiza las trendlist mobile
 function renderMovierCardMobile(trendMovie, index) {
     return `
     <div class="carousel-item ${index === 0 ? 'active': ''}">

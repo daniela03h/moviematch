@@ -1,8 +1,9 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap'
-const sectionUser = document.querySelector("#pedro")
+
+const sectionUser = document.querySelector("#container-navbar")
 console.log(sectionUser);
-//se realiza un evento para cuando se haga scroll
+//se realiza un evento para cuando se haga scroll - DOMContentloaded se ejecuda despues del load ya cuando el contenido esta pintado
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('nav')
     window.addEventListener('scroll', function () {
@@ -13,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
+
+//load es un evento que se ejecuta cuando la pagina carga
 window.addEventListener("load", () => {
     // Recuperamos el item del localStorage
     const userOnline = localStorage.getItem("userOnline");
@@ -149,9 +152,7 @@ function renderMovieCard(trendMovie) {
 
 trendList();
 
-
-
-
+//funcion que renderiza las trendlist mobile
 function renderMovierCardMobile(trendMovie, index) {
     return `
     <div class="carousel-item ${index === 0 ? 'active': ''}">
