@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "concurrently \"vite\" npm:jsonserver ",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "jsonserver": "json-server public/data/login.json"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",

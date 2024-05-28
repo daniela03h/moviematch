@@ -1,22 +1,18 @@
-
 import "../scss/genreSelector.scss";
 import * as bootstrap from "bootstrap";
-import {options} from "./api"
-import{callingGenres} from "./api"
-import { callingMoviesByGenres } from "./api";
+import { callingGenres } from "./api"
 
 let genresSection = document.getElementById("genres"); //SE LLAMA ESTA SESION Y SE PONE COMO ATRIBUTO EN LA FUNCION DE LLAMAR GENEROS PARA QUE ESTA LOS PINTE EN ESE CONTENEDOR
 let genresSelected = document.getElementById("selected-genres"); //EN ESTE CONTENEDOR SE PINTAN LOS GENEROS QUE SE VAN SELECCIONANDO
 let selectedGenre = {};
-let genres=[];
-
+let genres = [];
 const botonSearch = document.getElementById("search");
 
 //CADA QUE SE CARGA LA PAGINA SE ELIMINAN LOS GENEROS SELECCIONADOS Y LOS IDS QUE DEVOLVIO LA API PARA EVITAR ERORES
 
 window.addEventListener("load", () => {
-    localStorage.removeItem("genres")
-    localStorage.removeItem("ids")
+  localStorage.removeItem("genres")
+  localStorage.removeItem("ids")
 })
 
 //LLAMAMOS LA FUNCION CALLING GENRES DEL ARCHIVO DE API
@@ -24,7 +20,7 @@ window.addEventListener("load", () => {
 callingGenres(genresSection)
 
 
-// Evento de creación de géneros seleccionados arriba del titulo
+// Evento de creación de géneros seleccionados 
 genresSection.addEventListener("click", (event) => {
   let id = event.target.getAttribute("id");
   let name = event.target.getAttribute("name");
@@ -66,16 +62,15 @@ function deleteGenre(idGenreSelected) {
 }
 
 // Mandar el id de los géneros al array "genres"
-botonSearch.addEventListener("click", function() {
+botonSearch.addEventListener("click", function () {
   // Array de géneros seleccionados
   let genresA = Object.keys(selectedGenre); // Creación del array "genres"
   genres.push(...genresA)
   const genresString = genres.join(',') //Sacamos los generos del array
-    //Una vez le da click lo redirige a la pagina de match
-    window.location.href = "http://localhost:5173/src/pages/match.html"
-//   enviamos el array de los generos al localstorage para consumirlos en el archivo api
+  //Una vez le da click lo redirige a la pagina de match
+  window.location.href = "http://localhost:5173/src/pages/match.html"
+  //   enviamos el array de los generos al localstorage para consumirlos en el archivo api
   localStorage.setItem("genres", genresString)
-
 });
 
 

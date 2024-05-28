@@ -19,11 +19,8 @@ export async function callingGenres(site) {
       ${genre.name}
       </button>`;
     });
-
   } 
   
-
-
 // ######################################################################################################################################
 
 ////CREAMOS UNA FUNCION QUE BUSCA LAS PELICULAS POR GENEROS, RECIBE LOS GENEROS Y EL LUGAR DONDE SE VAN A INSERTAR, ADEMAS LLEVA UN CONTADOR DE CADA VEZ QUE SE HACE REMATCH
@@ -48,60 +45,72 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
     // localStorage.setItem("ids",ids)
     //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
     sitio.innerHTML = `
-    <main id="container-movies">
-    <section class="movie d-flex">
-        <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
-        <article class="container-one d-flex justify-content-center align-items-end ps-5">
-            <!-- <div class="container-info d-flex "> -->
-            <div class="container-info d-flex flex-column flex-md-row">
-                <h1 class="title-movie fw-bold mb-3 mb-md-0">${movie.title}</h1>
-                <div class="d-flex align-items-center gap-3">
-                    <i class="bi bi-star-fill star"></i>
-                    <p class="rating-movie mb-0">${movie.vote_average}</p>
+    <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
+        <section class="container-one d-flex flex-column justify-content-center">
+            <article>
+                <div class="container-image-small d-flex justify-content-center">
+                    <img class="movie-small" src="${url+movie.backdrop_path}" alt="">
                 </div>
-            </div>
+            </article>
 
-            <!-- <div class="d-flex flex-column">
-                    <h1 class="title-movie fw-bold ">${movie.title}</h1>     ORIGINAL
-                    <div class="d-flex gap-3 justify-content-center">
-                        <i class="bi bi-star-fill"></i>
-                        <p class="rating-movie">5.0</p>
+            <article>
+                <div class="container-info d-flex flex-column mt-5 p-4 d-lg-none">
+                    <h1 class="title-movie">${movie.title}</h1>
+                    <div class="d-flex gap-3 justify-content-end">
+                        <i class="bi bi-star-fill star"></i>
+                        <p class="rating-movie">${movie.vote_average}</p>
                     </div>
-                </div> -->
-
-            <div class="container-buttons"> <!--margin-right: 100px;-->
-                <button class="btn-rematch btn" type="button">Re Match</button>
-                <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
-            </div>
-            </div>
-        </article>
-
-        <article class="container-two d-flex flex-column">
-            <div class="container-image-small d-flex justify-content-center">
-                <img class="movie-small" src="${url+movie.backdrop_path}" alt=""> <!--imagen pequeña -->
-            </div>
-
-            <div class="container-description text-center p-5">
-                <p>
-                ${movie.overview}
-                </p>
-            </div>
-            <div class="avaliable d-flex gap-5 justify-content-center mb-4 ">
-                <h2 class="avaliabletext">Avaliable in:</h2>
-                <div>
-                    <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
-                    <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
-                    <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
                 </div>
-            </div>
+            </article>
 
-            <div class="d-flex flex-column  gap-4 justify-content-center align-items-center ">
-                <h2 class="contract">Contract with us 50% off</h2>
-                <a class="whatsapp" href="https://web.whatsapp.com/" target="_blank">CLICK HERE <i
-                        class="bi bi-whatsapp whatsapp"></i>
-            </div>
-        </article>
-    </section>
+            <article>
+                <div class="container-description text-center p-3 mb-4">
+                    <p class="fs-5 pt-lg-5"> ${movie.overview}</p>
+                </div>
+
+                <div class="avaliable d-flex gap-3 justify-content-center flex-column align-items-center mb-4">
+                    <h2 class="avaliable-text">Avaliable in:</h2>
+                    <div class="d-flex gap-3">
+                        <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
+                        <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
+                        <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column  gap-4 justify-content-center align-items-center ">
+                    <h2>Contract with us 50% off</h2>
+                    <a class="whatsapp"
+                        href="https://wa.me/573162777179/?text=Hola, somos MovieMatch quieres conocer nuestros planes?"
+                        target="_blank">
+                        CLICK HERE <i class="bi bi-whatsapp whatsapp"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article>
+                <div class="container-buttons d-flex justify-content-center gap-3 mt-5 d-lg-none">
+                <button class="btn btn-rematch" type="submit">Re Match</button>
+                <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
+                </div>
+            </article>
+        </section>
+
+        <section class="container-two d-flex">
+            <article class="w-100 d-flex justify-content-between align-items-center">
+                <div class="container-info-mobile d-flex flex-column mt-5 p-4 ">
+                    <h1 class="title-movie">${movie.title}</h1>
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-star-fill star"></i>
+                        <p class="rating-movie">${movie.vote_average}</p>
+                    </div>
+                </div>
+
+                <div class="container-buttons-mobile d-flex justify-content-center gap-3 mt-5 pe-5">
+                    <button class="btn btn-rematch" type="submit">Re Match</button>
+                    <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
+                </div>
+            </article>
+        </section>
     `; 
 
     // #####################BOTON REMATCH #########################
@@ -113,11 +122,6 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
       callingMoviesByGenres(generos,contenedor,localMovieMatched)
   })
   }
-
-  
-
-// #######################################################################################################################################
-
 
 // #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
 

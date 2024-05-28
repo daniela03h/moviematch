@@ -3,10 +3,7 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-* {
-    font-family: "Roboto", sans-serif;
-}
-
+//VARIABLES DE ENTORNO
 $faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
 $dark-purple: #0F001E;
 $light-purple: #3E2E57;
@@ -16,21 +13,25 @@ $blue: #0E41E8;
 $white: #FFFFFF;
 $black: #000;
 
-body{
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
     background-color: $dark-purple;
     color: $white;
 }
 
-.main-title{
+.main-title {
     font-weight: 900;
 }
 
 .container-accepted {
-background: $white;
-color: $black;
-position: relative;
-margin-top: 60px;
-border-radius: 30px;
+    background: $white;
+    color: $black;
+    position: relative;
+    margin-top: 60px;
+    border-radius: 30px;
 }
 
 .container-logo {
@@ -44,17 +45,13 @@ border-radius: 30px;
     background-color: $white;
 }
 
-// .stars {
-//     position: absolute;
-// }
-
 .logo {
     width: 80px;
     height: 80px;
-    background:$white;
+    background: $white;
 }
 
-.btn{
+.btn {
     width: 55%;
     height: 40px;
     border-radius: 60px;
@@ -116,6 +113,7 @@ border-radius: 30px;
     overflow: scroll;
 }
 
+//DESKTOP
 @media screen and (min-width: 992px) {
     #movie-slider {
         display: block;
