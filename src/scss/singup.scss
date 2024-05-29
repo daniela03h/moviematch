@@ -1,0 +1,157 @@
+@import url(./normalize.scss);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+$faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
+$dark-purple: #0F001E;
+$light-grey: #EFEFEF;
+$grey: #9D9D9C;
+$blue: #0E41E8;
+$white: #FFFFFF;
+$black: #000000;
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: $dark-purple;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    section {
+        width: 100%;
+        max-width: 600px;
+        background-color: $white;
+        padding: 20px;
+        border-radius: 10px;
+
+
+        h2 {
+            margin-top: 0;
+            font-weight: 1000;
+            font-size: 36px;
+            text-align: center;
+            border-bottom: 6px solid $black !important;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                gap: 20px;
+
+                input {
+                    width: 80%;
+                    height: 45px;
+                    border-radius: 60px;
+                    background-color: $white;
+                    border: 1px solid $grey;
+                    padding: 0 15px;
+                    font-size: 16px;
+                    background-color: $light-grey;
+
+                    @media (max-width: 600px) {
+                        width: 100%;
+                    }
+                }
+
+                h3 {
+                    font-size: 18px;
+                    color: $grey;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 0 10%;
+                    margin-bottom: 20px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: transform 0.3s;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    @media (max-width: 600px) {
+                        padding: 0;
+                        gap: 10px;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        img {
+                            margin: 5px;
+                        }
+                    }
+                }
+
+                button {
+                    width: 50%;
+                    height: 50px;
+                    border-radius: 60px;
+                    background: $faded-blue;
+                    border: none;
+                    color: $white;
+                    font-weight: 1000;
+                    font-size: x-large;
+
+                    &:hover {
+                        background: lighten(#0E41E8, 10%); // Cambia la opacidad de un color base similar
+                    }
+
+                    @media (max-width: 600px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            a {
+                margin-top: 20px;
+                text-decoration: none;
+                color: $black !important;
+                font-weight: bold;
+                text-align: center;
+
+                span {
+                    color: $blue;
+                    font-weight: 1000;
+                }
+
+
+            }
+        }
+    }
+}
+
+.icons {
+    border: solid 4px $blue;
+    transform: scale(1.3)
+}

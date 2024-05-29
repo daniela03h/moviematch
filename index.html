@@ -21,49 +21,29 @@
 
 <body>
     <div class="container-img-desktop"></div>
-    <header>
-        <nav class="navbar navbar-expand-lg ">
-            <div class="container-fluid d-lg-flex justify-content-lg-around ">
 
-                <a class="navbar-brand" href="">
-                    <img class="logo" src="./public/img/logo-white-MovieMatch.png" alt="">
-                </a>
-                <div class="d-flex flex-row gap-3 container-sing">
-                    <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
-                            aria-current="page" href="#">SING IN </a> <img class="icon-sing" src="./public/img/sing.png"
-                            alt=""></div>
-                    <div class="d-flex align-items-center gap-1 "> <a class="nav-link active title-header"
-                            aria-current="page" href="#">SING UP </a> <img class="icon-sing" src="./public/img/sing.png"
-                            alt=""></div>
-                </div>
-                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-lg-center  " id="navbarNavAltMarkup">
-                    <div class="navbar-nav gap-lg-5 ">
-                        <a class="nav-link active title-header" aria-current="page" href="#home">HOME</a>
-                        <a class="nav-link active title-header" aria-current="page" href="#info">INFO</a>
-                        <a class="nav-link active title-header" aria-current="page" href="#trends">TRENDS</a>
-                    </div>
-                </div>
+    <!-- ################################################HEADER##################################################     -->
+    <header>
+    <!-- ################################################NAVBAR##################################################     -->
+
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid d-lg-flex justify-content-lg-around " id="container-navbar">
+                <!-- se ingresa el contenido de navbar dinamicamente ID=container-navbar -->
             </div>
         </nav>
     </header>
 
+     <!-- ################################################MAIN##################################################     -->
     <main class="container">
+        <!-- seccion 1 slogan MovieMatch -->
         <section class="home d-flex justify-content-around" id="home">
             <article class="article-description">
                 <h1>Don't know what to watch?</h1>
                 <p>Let us be your MovieMatch!!</p>
             </article>
-            <article class="match-button">
-                <div class="container-button-movie"><button class="button-moviematch"><img class="logo-button"
-                            src="./public/img/logo-white-MovieMatch.png" alt="">Click Here</button></div>
-            </article>
         </section>
 
+        <!-- seccion 2 informacion -->
         <section class="info d-flex flex-column  justify-content-center align-items-center " id="info">
             <article
                 class="container-info d-flex flex-column flex-lg-row justify-content-lg-center align-items-center gap-5 p-5">
@@ -77,7 +57,7 @@
             </article>
             <article
                 class="container-info d-flex flex-column flex-lg-row justify-content-lg-center align-items-center gap-5 p-5">
-                <div class="d-flex justify-content-center "><img class="w-50" src="./public/img/camara.png" alt="">
+                <div class="d-flex justify-content-center "><img class="w-50" src="./public/img/camera.png" alt="">
                 </div>
                 <div class="info-description">
                     <h3>Enjoy the best recommendations</h3>
@@ -96,18 +76,19 @@
             </article>
         </section>
 
+        <!-- seccion 3 trends list -->
         <section id="trends">
             <article>
-                <h2 class="text-center mt-lg-5 ">TRENS LIST</h2>
+                <h2 class="text-center mt-lg-5 ">TREND LIST</h2>
                 <div></div>
             </article>
 
-             <!-- carrusel desktop-->
+            <!-- seccion 4 carrusel desktop-->
             <section id="movie-slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
                 <article class="carousel-inner">
                     <div class="carousel-item active ">
                         <div id="movie-trends" class="d-flex">
-                            <!-- acá se meten todas las peliculas -->
+                            <!-- acá se pintan todas las peliculas dinamicamente -->
                         </div>
                     </div>
                     <div class="carousel-item ">
@@ -133,11 +114,10 @@
                 </button>
             </section>
 
-
-            <!-- carrusel mobile -->
+            <!-- seccion 5 carrusel mobile -->
             <section id="movie-slider-mobile" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
                 <article class="carousel-inner mobile-carousel">
-                    <!-- se meten las peliculas -->
+                    <!-- se ingresan las peliculas dinamicamente  -->
                 </article>
                 <button class="carousel-control-prev" type="button" data-bs-target="#movie-slider-mobile"
                     data-bs-slide="prev">
@@ -151,9 +131,9 @@
                 </button>
             </section>
         </section>
-
-        <a href="./src/pages/accepted.html">DANIELA</a>
     </main>
+
+    <!-- ################################################FOOTER##################################################     -->
 
     <footer class="footer d-lg-flex justify-content-lg-around ">
         <section class="d-flex justify-content-center align-items-center gap-3 container-logo-footer">

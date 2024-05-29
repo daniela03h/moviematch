@@ -3,10 +3,7 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-* {
-    font-family: "Roboto", sans-serif;
-}
-
+//VARIABLES DE ENTORNO
 $faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
 $dark-purple: #0F001E;
 $light-purple: #3E2E57;
@@ -15,6 +12,10 @@ $grey: #9D9D9C;
 $blue: #0E41E8;
 $white: #FFFFFF;
 $black: #000;
+
+* {
+    font-family: "Roboto", sans-serif;
+}
 
 body {
     background: $dark-purple;
@@ -41,8 +42,9 @@ header {
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
 }
 
 .icon-sing {
@@ -65,25 +67,20 @@ header {
 }
 
 
-.article-description {
-    width: 50%;
-}
-
-.container-button-movie {
-    width: 70px;
-    height: 80px;
-    background: $white;
-    border-radius: 10px;
-}
-
-.button-moviematch {
+.btn {
+    font-size: x-small !important;
+    width: 60px;
+    margin-right: 15px;
+    height: 25px;
+    border-radius: 60px;
+    background: $faded-blue;
     border: none;
-    font-size: 8px;
-    font-weight: bold;
-    border-radius: 10px;
-    height: 80px;
-    padding-top: 5px;
+    color: $white;
+    font-weight: 1000;
+}
 
+.article-description {
+    width: 70%;
 }
 
 .logo-button {
@@ -113,18 +110,6 @@ main {
 .info-description {
     padding-bottom: 30px;
     border-bottom: 1px solid $light-purple;
-}
-
-.footer {
-    background: $black;
-}
-
-.container-name-footer {
-    border-left: 1px solid $grey;
-}
-
-.social-networks {
-    color: $white;
 }
 
 // carrusel
@@ -178,8 +163,31 @@ main {
     overflow: scroll;
 }
 
+.footer {
+    background: $black;
+}
 
+.icon-user {
+    width: 25px;
+    border-radius: 100px;
+}
 
+.username {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: small;
+    margin-right: 5px;
+}
+
+.container-name-footer {
+    border-left: 1px solid $grey;
+}
+
+.social-networks {
+    color: $white;
+}
+
+// DESKTOP
 @media screen and (min-width: 992px) {
     .container-sing {
         order: 2;
@@ -187,7 +195,27 @@ main {
 
     .navbar-nav {
         background: transparent;
-        // gap: 80px;
+    }
+
+    .icon-user {
+        width: 35px;
+        border-radius: 100px;
+    }
+
+    .username {
+        font-size: small;
+    }
+
+    .btn {
+        width: 100px;
+        margin-right: 30px;
+        height: 40px;
+        border-radius: 60px;
+        background: $faded-blue;
+        border: none;
+        color: $white;
+        font-weight: 1000;
+        font-size: large;
     }
 
     .logo {
@@ -251,5 +279,9 @@ main {
     .flip-card {
         width: 500px;
         height: 420px;
+    }
+
+    .footer {
+        margin-top: 20px;
     }
 }
