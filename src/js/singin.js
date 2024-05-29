@@ -16,6 +16,7 @@ form.addEventListener('submit', async(event) => { //CUANDO LE DE CLICK AL BOTON 
         if (user.password == password.value){ //VERIFICA CONTRASEÑA
 
             localStorage.setItem("userOnline", JSON.stringify(user))  //GUARDAMOS LA SESION DEL USUARIO EN EL LOCAL STORAGE
+            localStorage.setItem("userID", JSON.stringify(user.id)) //GUARDAMOS EL ID DEL USUARIO TAMBIEN
 
             window.location.href = "http://localhost:5173" //MOVEMOS AL USUARIO A LA PAGINA PRINCIPAL
         }else{

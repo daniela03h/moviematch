@@ -41,6 +41,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
     }
     // localStorage.setItem("movies",  JSON.stringify(movies));
     const movie = movies[localMovieMatched] //MOSTRAMOS LA PELICULA EN LA POSICION 0, QUE ES A LO QUE EQUIVALE LA VARIABLE
+    localStorage.setItem('movie', movie.id);
     // ids = ids.concat(movie.id);
     // localStorage.setItem("ids",ids)
     //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
@@ -90,7 +91,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
             <article>
                 <div class="container-buttons d-flex justify-content-center gap-3 mt-5 d-lg-none">
                 <button class="btn btn-rematch" type="submit">Re Match</button>
-                <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
+                <a href="./accepted.html"><button class="btn" id="accepted" type="submit">Match</button></a>
                 </div>
             </article>
         </section>
@@ -139,4 +140,65 @@ export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSC
     }
     //RETURN URL IMAGE TO PROVIDERS
   });
+}
+
+//######################################### meter favoritos al JSON ##############################################################################################33
+export async function updateFavMovies(userId, favMovies) {
+  // Obtener los datos actuales del usuario del servidor
+  const response = await fetch(`http://localhost:3000/users/${userId}`);
+  const userData = await response.json();
+
+  // Combinar los datos actuales con los datos de películas actualizados
+  userData.favMovies.push(favMovies);
+
+  // Realizar la solicitud PUT con todos los datos combinados
+  await fetch(`http://localhost:3000/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+}
+
+export async function updateNotFavMovies(userId, notFavMovies) {
+  // Obtener los datos actuales del usuario del servidor
+  const response = await fetch(`http://localhost:3000/users/${userId}`);
+  const userData = await response.json();
+
+  // Combinar los datos actuales con los datos de películas actualizados
+  userData.notFavMovies.push(notFavMovies);
+
+
+  // Realizar la solicitud PUT con todos los datos combinados
+  await fetch(`http://localhost:3000/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+}
+
+//################ imagen ########################
+const apiKey = 'c6a2aede274ee53a8181cba7caa68e52';
+
+export async function getMovieImageById(movieId) {
+  try {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=images`);
+    if (!response.ok) {
+      throw new Error('No se pudo obtener la información de la película');
+    }
+    const data = await response.json();
+    // Verificar si hay imágenes disponibles
+    if (data.images && data.images.posters && data.images.posters.length > 0) {
+      // Devolver la URL de la primera imagen del póster
+      return `https://image.tmdb.org/t/p/original${data.images.posters[0].file_path}`;
+    } else {
+      throw new Error('No se encontraron imágenes para la película');
+    }
+  } catch (error) {
+    console.error('Error al obtener la imagen de la película:', error);
+    return null;
+  }
 }
