@@ -30,6 +30,20 @@
         "1087388",
         "893723"
       ]
+    },
+    {
+      "id": "5225",
+      "username": "edward",
+      "email": "edward@gmail",
+      "password": "123",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "201652"
+      ],
+      "notFavMovies": [
+        "996154",
+        "823464"
+      ]
     }
   ]
 }

@@ -148,7 +148,7 @@ export async function updateFavMovies(userId, favMovies) {
   const response = await fetch(`http://localhost:3000/users/${userId}`);
   const userData = await response.json();
 
-  // Combinar los datos actuales con los datos de películas actualizados
+  // Meter pelicula favorita en sus datos de usuario
   userData.favMovies.push(favMovies);
 
   // Realizar la solicitud PUT con todos los datos combinados
@@ -166,7 +166,7 @@ export async function updateNotFavMovies(userId, notFavMovies) {
   const response = await fetch(`http://localhost:3000/users/${userId}`);
   const userData = await response.json();
 
-  // Combinar los datos actuales con los datos de películas actualizados
+  // Meter pelicula no favorita en sus datos de usuario
   userData.notFavMovies.push(notFavMovies);
 
 
@@ -186,14 +186,15 @@ export async function getMovieImageById(movieId) {
   try {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/images`, options);
     const data = await response.json();
-    if (data && data.backdrops && data.backdrops.length > 0) {
+    if (data && data.backdrops && data.backdrops.length > 0) //confirmar que existan los elementos enteros que trae la api en cuanto imagenes de peliculas  
+      {
       return "https://image.tmdb.org/t/p/w500/" + data.backdrops[0].file_path;
     } else {
-      return null; // No se encontraron imágenes para la película
+      return null; // No se encontraron imágenes para la película bajo estos requerimientos (backdrops, file_path)
     }
   } catch (error) {
     console.error(error);
-    return null; // Ocurrió un error al obtener las imágenes
+    return null; // Ocurrió un error al obtener las imágenes de la api
   }
 }
 

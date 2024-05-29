@@ -4,34 +4,40 @@ import { getMovieImageById } from "./api";
 import Swal from "sweetalert2";
 
 export async function startCounter(movie) {
-  let espera = await getMovieImageById(movie);
+
+//variables para contador
   const actualTime = Date.now(); // Obtener la hora actual en milisegundos
   const savedTime = localStorage.getItem("startCounter"); // Leer la hora guardada en localStorage
-  let userIdWithQuotes = localStorage.getItem("userID");
-  let userId = userIdWithQuotes.replace(/^"(.*)"$/, "$1");
+  let timer = 7000; //tiempo que tardarà la alerta en salir (una hora equivale a 3600000)
+
+    //variables para favoritos
+  let awaitLink = await getMovieImageById(movie); //funcion asincrona para obtener imagen
+  let userIdWithQuotes = localStorage.getItem("userID"); //obtener ID de localStorage
+  let userId = userIdWithQuotes.replace(/^"(.*)"$/, "$1"); //quitarle comillas al user
   // Función que se ejecutará después de 24 horas
   function favQuestion() {
-    // Muestra el cuadro de confirmación
+    // Muestra el cuadro de confirmación de favorito
     const respuesta = Swal.fire({
-      imageUrl: espera,
+      imageUrl: awaitLink,
       imageWidth: 400,
       imageHeight: 200,
       imageAlt: "Imagen de pelicula",
-      title: `Disfrutaste de esta pelicula?`,
+      title: `did you liked the movie?`,
       showCancelButton: true,
-      confirmButtonText: "Si!",
+      confirmButtonText: "Yes!",
       cancelButtonText: "No!",
     });
 
     respuesta.then((result) => {
-      // Aquí puedes ejecutar código después de que el usuario haya interactuado con la alerta
+      // despues de elegir "yes" o "no"
       if (result.isConfirmed) {
-        alert("¡Nos alegra saber que te gustó!");
-        updateFavMovies(userId, movie);
+        alert("I'm glad you liked it!! :D");
+        updateFavMovies(userId, movie); //se agrega la pelicula a favoritos
         localStorage.removeItem("movie");
+        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        alert("Lamentamos que no haya sido de tu agrado.");
-        updateNotFavMovies(userId, movie);
+        alert("We are sorry that it was not to your liking. :(");
+        updateNotFavMovies(userId, movie); //se agrega a no favoritos
         localStorage.removeItem("movie");
       }
     });
@@ -43,14 +49,14 @@ export async function startCounter(movie) {
     // Si ya hay una hora guardada
     const passedTime = actualTime - savedTime; // Calcular el tiempo transcurrido
 
-    if (passedTime >= 5000) {
-      // Si han pasado 24 horas o más
+    if (passedTime >= timer) {
+      // Si ha pasado el tiempo predispuesto en la variable "timer"
       favQuestion(); // Ejecutar el evento inmediatamente
     } else {
-      setTimeout(favQuestion, 5000 - passedTime); // Ajustar el temporizador para el tiempo restante
+      setTimeout(favQuestion, timer - passedTime); // Ajustar el temporizador para el tiempo restante
     }
   } else {
-    localStorage.setItem("startCounter", actualTime); // Guardar la hora actual en localStorage
-    setTimeout(favQuestion, 5000); // Configurar el temporizador para 24 horas
+    localStorage.setItem("startCounter", actualTime); // Guardar la hora actual en localStorage (savedTime)
+    setTimeout(favQuestion, timer); // Configurar el temporizador 
   }
 }

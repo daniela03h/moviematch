@@ -1,7 +1,7 @@
 import '../scss/accepted.scss';
 import * as bootstrap from 'bootstrap'
 
-// traer elementos del HTML
+// traer elementos del HTML, las 4 vistas del carrusel y la univa vista de la version mobile
 const sliderContainer = document.getElementById("movie-trends");
 const sliderContainer2 = document.getElementById("movie-trends2");
 const sliderContainer3 = document.getElementById("movie-trends3");

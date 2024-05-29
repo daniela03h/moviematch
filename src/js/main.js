@@ -172,9 +172,10 @@ function renderMovierCardMobile(trendMovie, index) {
 
 // Iniciar el temporizador cuando se cargue la página
 
+
 window.onload = function() {
     if (localStorage.getItem("movie")!=null) {
-    startCounter(localStorage.getItem("movie")); // Pasa la película que desees
+    startCounter(localStorage.getItem("movie")); // se ejecuta en caso de existir el valor de movie en el LocalStorage
     
     }
 };
