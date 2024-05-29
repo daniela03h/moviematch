@@ -54,7 +54,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
           for (let i = 0; i < servicios.length; i++) {
             const servicio = servicios[i];
             const logo = servicio.logo_path;
-            htmlImg += `<a href=""><img src="${url + logo}" alt="" class="img-avaliable imgmovie img-thumbnail"></a>`;
+            htmlImg += `<a href=""><img src="${url + logo}" alt="" class="img-avaliable "></a>`;
           }
         } else {
           htmlImg = "Not Available Yet";
