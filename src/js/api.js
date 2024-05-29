@@ -23,6 +23,7 @@ export async function callingGenres(site) {
   
 // ######################################################################################################################################
 
+
 ////CREAMOS UNA FUNCION QUE BUSCA LAS PELICULAS POR GENEROS, RECIBE LOS GENEROS Y EL LUGAR DONDE SE VAN A INSERTAR, ADEMAS LLEVA UN CONTADOR DE CADA VEZ QUE SE HACE REMATCH
 let localMovieMatched = 0 //CREAMOS UNA VARIABLE GLOBAL QUE VA A TOMAR LOS VALORES DE EL CONTADOR QUE ESTA DENTRO DE LA FUNCION
 export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
@@ -41,6 +42,37 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
 
     const movie = movies[localMovieMatched] //MOSTRAMOS LA PELICULA EN LA POSICION 0, QUE ES A LO QUE EQUIVALE LA VARIABLE
     localStorage.setItem('movie', movie.id);
+
+    async function fetchHtmlImg(movie) {
+      let htmlImg = '';
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}/watch/providers`, options);
+        const data = await response.json();
+    
+        if (data.results && data.results.CO) {
+          let servicios = data.results.CO.rent;
+          for (let i = 0; i < servicios.length; i++) {
+            const servicio = servicios[i];
+            const logo = servicio.logo_path;
+            htmlImg += `<a href=""><img src="${url + logo}" alt="" class="img-avaliable imgmovie img-thumbnail"></a>`;
+          }
+        } else {
+          htmlImg = "Not Available Yet";
+        }
+      } catch (err) {
+        console.error(err);
+        htmlImg = "Not Avaliable Yet";
+      }
+      return htmlImg;
+    }
+    
+
+      // Suponiendo que movie ya está definido
+      const htmlImg = await fetchHtmlImg(movie);
+
+    
+
+
     //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
     sitio.innerHTML = `
     <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
@@ -69,9 +101,9 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
                 <div class="avaliable d-flex gap-3 justify-content-center flex-column align-items-center mb-4">
                     <h2 class="avaliable-text">Avaliable in:</h2>
                     <div class="d-flex gap-3">
-                        <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
-                        <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
-                        <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
+                        
+                      ${htmlImg}
+                        
                     </div>
                 </div>
 
