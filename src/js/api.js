@@ -143,6 +143,18 @@ export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSC
 }
 
 //######################################### meter favoritos al JSON ##############################################################################################33
+  // metodo PUT
+  async function putMethod(userData, userId) {
+    await fetch(`http://localhost:3000/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+  }
+  
+
 export async function updateFavMovies(userId, favMovies) {
   // Obtener los datos actuales del usuario del servidor
   const response = await fetch(`http://localhost:3000/users/${userId}`);
@@ -150,15 +162,7 @@ export async function updateFavMovies(userId, favMovies) {
 
   // Meter pelicula favorita en sus datos de usuario
   userData.favMovies.push(favMovies);
-
-  // Realizar la solicitud PUT con todos los datos combinados
-  await fetch(`http://localhost:3000/users/${userId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  });
+  putMethod(userData, userId)
 }
 
 export async function updateNotFavMovies(userId, notFavMovies) {
@@ -168,16 +172,7 @@ export async function updateNotFavMovies(userId, notFavMovies) {
 
   // Meter pelicula no favorita en sus datos de usuario
   userData.notFavMovies.push(notFavMovies);
-
-
-  // Realizar la solicitud PUT con todos los datos combinados
-  await fetch(`http://localhost:3000/users/${userId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  });
+  putMethod(userData, userId)
 }
 
 //################ imagen ########################
