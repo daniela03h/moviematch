@@ -61,6 +61,27 @@
       "favMovies": [
         "111"
       ],
+      "notFavMovies": [
+        "937287"
+      ]
+    },
+    {
+      "id": "9f79",
+      "username": "hdADJS",
+      "email": "jcomte23@gmail.com",
+      "password": "1234",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "16bb",
+      "username": "daniela0393h@gmail.com",
+      "email": "jcomte24@gmail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "402434"
+      ],
       "notFavMovies": []
     }
   ]

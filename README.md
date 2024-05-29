@@ -1,47 +1,47 @@
-# Bienvenidos a MovieMatch
+# Welcome to MovieMatch
 
 
-## Descripción
+## Description
 
-MovieMatch tiene como objetivo proporcionar a los usuarios recomendaciones de películas personalizadas basadas en sus géneros preferidos facilmente. 
+MovieMatch aims to provide users with personalized movie recommendations based on their favorite genres easily.
 
-¿Por qué MovieMatch?
-La búsqueda a la hora de ver una película o serie con la cantidad de contenido que se tiene hoy en día puede ser un tarea difícil y frustrante, por esta razón nace MovieMatch para resolver este problema. MovieMatch facilita a los amantes del cine la búsqueda de películas y series que se ajusten a sus gustos personales y que el usuario tenga toda la información detallada de las películas o series como año de estreno, posicionamiento de la película, actores principales, reseña y el por qué puede ser apta para que la vea según los géneros que eligió.
+Why MovieMatch?
+Finding a movie or series to watch with the amount of content available today can be a difficult and frustrating task. That's why MovieMatch was born to solve this problem. MovieMatch makes it easy for movie lovers to search for movies and series that fit their personal tastes, providing users with detailed information about movies or series such as release year, movie positioning, main actors, reviews, and why it might be suitable for them to watch based on the genres they chose.
 
-¿Para qué?
-El propósito de MovieMatch es simplificar el proceso de selección de películas al ofrecer recomendaciones relevantes y adaptadas a los gustos individuales de cada usuario.
+What for?
+The purpose of MovieMatch is to simplify the movie selection process by offering relevant recommendations tailored to each user's individual tastes.
 
-¿Para quién?
-MovieMatch es para cualquier persona que quiera descubrir nuevas películas o series de manera sencilla y sobre todo es muy útil para las personas que se sienten frustrados en la búsqueda de películas y series por la cantidad de contenido que está disponibles y desean una recomendación personalizada para tomar decisiones.
+For whom?
+MovieMatch is for anyone who wants to discover new movies or series easily, and it's especially useful for people who feel frustrated when searching for movies and series due to the amount of content available, and who desire personalized recommendations to make decisions.
 
 
-## Instalación 
+## Installation 
 
-#### Prerrequisitos
+#### Prerequisites
 
-- Tener instalado node y npm 
+- Have Node.js and npm installed
 
-#### Correr proyecto
+#### Running the project
 
-- npm insttall 
+- npm install
 - npm run dev
 
 ![MovieMatch](/public/img/figma.png "Figma")
 
 
-## Tecnologias
+## Technologies
 
-Frontend: HTML, CSS, JavaScript 
+Frontend: HTML, CSS, JavaScript
 Api: https://www.themoviedb.org/
-Estilos: Bootstrap, SASS, SweetAlert
-Control de versiones: Git & GitHub
+Styles: Bootstrap, SASS, SweetAlert
+Version Control: Git & GitHub
 Backend: JSON Server
-Link Diseño del proyecto en Figma: 
+Project Design Link in Figma:
 https://www.figma.com/design/f08h2VZlmkXx3EkP7yKAh7/MovieMatch?node-id=22%3A2&t=pyPvTWbKH8CfFgy2-1
 
 
 
-## Desarrolladores
+## Developers
 
 [Daniela Londoño Herrera](https://github.com/daniela03h)
 [Juan José Arenas Gaviria](https://github.com/jarenas1)
@@ -49,7 +49,6 @@ https://www.figma.com/design/f08h2VZlmkXx3EkP7yKAh7/MovieMatch?node-id=22%3A2&t=
 [Brayan Rodríguez Mosquera](https://github.com/Duvingrand)
 
 
-
-Link Tablero de actividades en Trello: 
+Link to Trello Activity Board:
 https://trello.com/invite/b/QzQY5UPQ/ATTIb3b7da66cb8212a9686998b40bd2899e286F9085/moviematch
 
