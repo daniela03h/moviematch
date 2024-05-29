@@ -75,6 +75,7 @@ window.addEventListener("load", () => {
         <div class="navbar-nav gap-lg-5 ">
             <a class="nav-link active title-header" aria-current="page" href="#home">HOME</a>
             <a class="nav-link active title-header" aria-current="page" href="/src/pages/genreSelector.html">DO A MATCH!</a>
+            <a class="nav-link active title-header" aria-current="page" href="./src/pages/userSection.html">SEEN</a>
             <a class="nav-link active title-header" aria-current="page" href="#info">INFO</a>
             <a class="nav-link active title-header" aria-current="page" href="#trends">TRENDS</a>
         </div>
@@ -171,7 +172,6 @@ function renderMovierCardMobile(trendMovie, index) {
 }
 
 // Iniciar el temporizador cuando se cargue la página
-
 
 window.onload = function() {
     if (localStorage.getItem("movie")!=null) {

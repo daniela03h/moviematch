@@ -49,7 +49,7 @@ function showSelectedGenres() {
       <button type="button" class="genre-btn" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; // Creación de botones con cada género seleccionado
       genresCounter++;
     } else {
-      alert("el máximo de géneros agregable es 3"); // Alerta en caso de que se supere la capacidad máxima
+      alert("The maximum number of genres that can be added is 3"); // Alerta en caso de que se supere la capacidad máxima
       delete selectedGenre[idGenreSelected]; // Eliminar género sobrante del objeto "selectedGenre"
     }
   }

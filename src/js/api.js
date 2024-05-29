@@ -30,7 +30,6 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
   let url = "https://image.tmdb.org/t/p/w500/" //ESTA VARIABLE SE PONE AL INICIO DE CADA RUTA DE IMAGEN PARA QUE PUEDA MOSTRARSE DESDE LA RED
   let movies = [];
   let page = 1; //CONTADOR DE LAS PAGINAS
-  let ids = []
   const maxPage = 8; // LA API TRAE 20PELICULAS POR PAGINA, POR LO QUE VAMOS A TRAER 8 PAGINAS
   while (page <= maxPage) { //RECORRE LAS PELICULAS Y VA AUMENTANDO LA PAGINA
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genres}&page=${page}`, options); //LLAMA LAS PELICULASPOR GENEROS Y POR PAGINAS
@@ -39,11 +38,9 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
       movies = movies.concat(filteredMovies); //AÑADE ESTAS PELICULAS A FILTEREDMOVIES
       page++;
     }
-    // localStorage.setItem("movies",  JSON.stringify(movies));
+
     const movie = movies[localMovieMatched] //MOSTRAMOS LA PELICULA EN LA POSICION 0, QUE ES A LO QUE EQUIVALE LA VARIABLE
     localStorage.setItem('movie', movie.id);
-    // ids = ids.concat(movie.id);
-    // localStorage.setItem("ids",ids)
     //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
     sitio.innerHTML = `
     <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
@@ -132,24 +129,6 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
 })
   }
 
-// #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
-
-// export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSCAR 
-//   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?watch_region=CO`, options)
-//   const data = await response.json();
-//   // console.log(data.results.CO.rent);
-//   let url = "https://image.tmdb.org/t/p/w500/" //URL PARA QUE MUESTRTE LAS IMAGENES
-//   let providers = await data.results.CO?.rent  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
-//   await providers?.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
-//     if(providers !== null){                     
-//       console.log(id, ":",url+plataform.logo_path)
-//     }else{
-//       console.log(id,"no hayy");
-//     }
-//     RETURN URL IMAGE TO PROVIDERS
-//   });
-// }
-
 //######################################### meter favoritos al JSON ##############################################################################################33
   // metodo PUT
   async function putMethod(userData, userId) {
@@ -204,25 +183,20 @@ export async function getMovieImageById(movieId) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export async function getMovieById(movieId,site) {
+export async function getMovieById(movieId,site) { //CREAMOS UNA FUNCION QUE RECIBE EL ID DE LA PELICULA Y EL SITIO PARA HACER EL INNER
   // Obtener los datos actuales del usuario del servidor
-  const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`);
+  const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,options); //LLAMAMOS DE LA API PELICULA POR MEDIO DEL ID
   const data = await response.json();
-  let url = "https://image.tmdb.org/t/p/w500/"
-  let image =url+data.poster_path
-  let title = data.original_title
-
+  let url = "https://image.tmdb.org/t/p/w500/" //URL INICIAL DE LAS IMAGENES
   site.innerHTML +=`
-  <div class="card mt-5" style="width: 18rem;">
-  <img src="${image}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="${title}">Card title</h5>
-    <a href="#" class="btn btn-danger">DELETE</a>
-  </div>
-</div>
+  <div class="card-container">
+                    <div class="card mt-5" style="width: 18rem;">
+                        <img src="${url+data.backdrop_path}" class="card-img-top" alt="pedro"> 
+                        <div class="card-body">
+                          <h5 class="card-title">${data.original_title}</h5>
+                        </div>
+                      </div>
 `
-
-
 }
 
 

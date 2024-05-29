@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="Provide users with personalized movie recommendations based on their preferred film genres." />
+    <meta name="keywords" content="movie, cinemas, series, match, actors, recommendations">
+    <meta name="sitedomain" content="https://moviematch.com/" />
+    <meta name="organization" content="Riwi_Dell" />
+    <meta name="author" content="@daniela03h, @jarenas1, @milena-727, @duvingrand" />
+    <meta name="designer" content="@daniela03h, @jarenas1, @milena-727, @duvingrand" />
+    <meta name="copyright" content="© 2024 MovieMatch. Todos los derechos reservados">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="revisit-after" content="15days" />
+    <link rel="shortcut icon" href="../../public/icons/favicon-moviematch.ico" type="image/x-icon">
+    <title>User section</title>
 </head>
 <body>
     <header>
         <section id="head" class="header">
-            INSERTAMOS DATOS DEL USUARIO POR MEDIO DE LOCAL STORAGE DESDE JS
+            <!-- INSERTAMOS DATOS DEL USUARIO POR MEDIO DE LOCAL STORAGE DESDE JS -->
         </section>
     </header>
-    <main>
+    <main> 
+        <!-- CONTENEDOR PPAL -->
         <section class="main-container">
-            <article class="favorites">
+            
+            <!-- CONTENEDOR DE FAVORITOS -->
+            <article class="favo">
                 <h2>Favorites</h2>
-                <div class="card-container">
-                    <div class="card mt-5" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-danger">DELETE</a>
-                        </div>
-                      </div>
-                      <div class="card mt-5" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-danger">DELETE</a>
-                        </div>
-                      </div>
-
-                      
+                <!-- CONTENEDOR DE LAS CARDS -->
+                <div class="favorites"></div>
+        
                 </div>
             </article>
-            <article class="not-favorites">
+              <!-- CONTENEDOR DE NO FAVORITOS -->
+            <article class="not-favo">
                 <h2>Not Favorites</h2>
+                <!-- CONTENEDOR DE CARDS -->
+                <div class="not-favorites"></div>
             </article>
         </section>
     </main>
