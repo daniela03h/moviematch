@@ -181,24 +181,22 @@ export async function updateNotFavMovies(userId, notFavMovies) {
 }
 
 //################ imagen ########################
-const apiKey = 'c6a2aede274ee53a8181cba7caa68e52';
 
 export async function getMovieImageById(movieId) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=images`);
-    if (!response.ok) {
-      throw new Error('No se pudo obtener la información de la película');
-    }
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/images`, options);
     const data = await response.json();
-    // Verificar si hay imágenes disponibles
-    if (data.images && data.images.posters && data.images.posters.length > 0) {
-      // Devolver la URL de la primera imagen del póster
-      return `https://image.tmdb.org/t/p/original${data.images.posters[0].file_path}`;
+    if (data && data.backdrops && data.backdrops.length > 0) {
+      return "https://image.tmdb.org/t/p/w500/" + data.backdrops[0].file_path;
     } else {
-      throw new Error('No se encontraron imágenes para la película');
+      return null; // No se encontraron imágenes para la película
     }
   } catch (error) {
-    console.error('Error al obtener la imagen de la película:', error);
-    return null;
+    console.error(error);
+    return null; // Ocurrió un error al obtener las imágenes
   }
 }
+
+
+
+

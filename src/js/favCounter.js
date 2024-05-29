@@ -3,7 +3,8 @@ import { updateNotFavMovies } from "./api";
 import { getMovieImageById } from "./api";
 import Swal from "sweetalert2";
 
-export function startCounter(movie) {
+export async function startCounter(movie) {
+  let espera = await getMovieImageById(movie);
   const actualTime = Date.now(); // Obtener la hora actual en milisegundos
   const savedTime = localStorage.getItem("startCounter"); // Leer la hora guardada en localStorage
   let userIdWithQuotes = localStorage.getItem("userID");
@@ -12,11 +13,11 @@ export function startCounter(movie) {
   function favQuestion() {
     // Muestra el cuadro de confirmación
     const respuesta = Swal.fire({
-      imageUrl: getMovieImageById(movie),
+      imageUrl: espera,
       imageWidth: 400,
       imageHeight: 200,
       imageAlt: "Imagen de pelicula",
-      title: `Disfrutaste de esta pelicula? ${movie}`,
+      title: `Disfrutaste de esta pelicula?`,
       showCancelButton: true,
       confirmButtonText: "Si!",
       cancelButtonText: "No!",
