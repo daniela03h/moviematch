@@ -1,5 +1,6 @@
 import '../scss/styles.scss';
 import * as bootstrap from 'bootstrap'
+import { startCounter } from "./favCounter";
 
 const sectionUser = document.querySelector("#container-navbar")
 //se realiza un evento para cuando se haga scroll - DOMContentloaded se ejecuda despues del load ya cuando el contenido esta pintado
@@ -168,4 +169,14 @@ function renderMovierCardMobile(trendMovie, index) {
 </div>
     `
 }
+
+// Iniciar el temporizador cuando se cargue la página
+
+
+window.onload = function() {
+    if (localStorage.getItem("movie")!=null) {
+    startCounter(localStorage.getItem("movie")); // se ejecuta en caso de existir el valor de movie en el LocalStorage
+    
+    }
+};
 
