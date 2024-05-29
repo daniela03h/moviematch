@@ -51,6 +51,17 @@
         "385687"
       ],
       "notFavMovies": []
+    },
+    {
+      "id": "4c9f",
+      "username": "felipe",
+      "email": "f@f",
+      "password": "12",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "111"
+      ],
+      "notFavMovies": []
     }
   ]
 }

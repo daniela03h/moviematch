@@ -31,7 +31,7 @@ export async function startCounter(movie) {
     respuesta.then((result) => {
       // despues de elegir "yes" o "no"
       if (result.isConfirmed) {
-        alert("I'm glad you liked it!! :D");
+        alert("We are glad you liked it!! :D");
         updateFavMovies(userId, movie); //se agrega la pelicula a favoritos
         localStorage.removeItem("movie");
         
