@@ -106,7 +106,7 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
                 </div>
 
                 <div class="container-buttons-mobile d-flex justify-content-center gap-3 mt-5 pe-5">
-                    <button class="btn btn-rematch" type="submit">Re Match</button>
+                    <button class="btn btn-rematch-desktop" type="submit">Re Match</button>
                     <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
                 </div>
             </article>
@@ -121,6 +121,14 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
       localMovieMatched+=1
       callingMoviesByGenres(generos,contenedor,localMovieMatched)
   })
+
+  let btnRematchDesktop = document.querySelector(".btn-rematch-desktop") //EN ESTE EVENTO VAMOS A AÑADIRLE 1 AL CONTADOR CREADO Y VOLVEMOS A LLAMAR LA FUNCION PARA QUE MUETSRE LA SIGUIENTE PELICULA
+  btnRematchDesktop.addEventListener("click", ()=>{
+    let contenedor = document.querySelector('#container-movies')
+    const generos = localStorage.getItem("genres")
+    localMovieMatched+=1
+    callingMoviesByGenres(generos,contenedor,localMovieMatched)
+})
   }
 
 // #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
