@@ -126,21 +126,21 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
 
 // #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
 
-export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSCAR 
-  const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?watch_region=CO`, options)
-  const data = await response.json();
-  // console.log(data.results.CO.rent);
-  let url = "https://image.tmdb.org/t/p/w500/" //URL PARA QUE MUESTRTE LAS IMAGENES
-  let providers = await data.results.CO?.rent  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
-  await providers?.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
-    if(providers !== null){                     
-      console.log(id, ":",url+plataform.logo_path)
-    }else{
-      console.log(id,"no hayy");
-    }
-    //RETURN URL IMAGE TO PROVIDERS
-  });
-}
+// export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSCAR 
+//   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?watch_region=CO`, options)
+//   const data = await response.json();
+//   // console.log(data.results.CO.rent);
+//   let url = "https://image.tmdb.org/t/p/w500/" //URL PARA QUE MUESTRTE LAS IMAGENES
+//   let providers = await data.results.CO?.rent  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
+//   await providers?.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
+//     if(providers !== null){                     
+//       console.log(id, ":",url+plataform.logo_path)
+//     }else{
+//       console.log(id,"no hayy");
+//     }
+//     RETURN URL IMAGE TO PROVIDERS
+//   });
+// }
 
 //######################################### meter favoritos al JSON ##############################################################################################33
   // metodo PUT
@@ -194,5 +194,27 @@ export async function getMovieImageById(movieId) {
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export async function getMovieById(movieId,site) {
+  // Obtener los datos actuales del usuario del servidor
+  const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`);
+  const data = await response.json();
+  let url = "https://image.tmdb.org/t/p/w500/"
+  let image =url+data.poster_path
+  let title = data.original_title
+
+  site.innerHTML +=`
+  <div class="card mt-5" style="width: 18rem;">
+  <img src="${image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="${title}">Card title</h5>
+    <a href="#" class="btn btn-danger">DELETE</a>
+  </div>
+</div>
+`
+
+
+}
 
 

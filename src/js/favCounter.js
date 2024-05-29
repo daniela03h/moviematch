@@ -60,3 +60,5 @@ export async function startCounter(movie) {
     setTimeout(favQuestion, timer); // Configurar el temporizador 
   }
 }
+
+
