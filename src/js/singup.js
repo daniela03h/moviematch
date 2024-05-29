@@ -19,9 +19,9 @@ form.addEventListener("submit", async (event) => {
     await registerUser(username, email, password, sIcon);
     window.location.href = "http://localhost:5173/src/pages/singin.html"; //ESTO SIRVE PARA MOVERNOS DESDE EL JAVASCRIPT A OTRAS VENTANAS
   } else if (checkPassword && !checkEmail) { //SI NO SACA ALERTA
-    alert("El correo ya se encuentra registrado");
+    alert("The email is already registered");
   }else  {
-    alert("Las contraseñas no coinciden");
+    alert("Passwords do not match");
   }
 });
 
