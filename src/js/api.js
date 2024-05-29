@@ -41,8 +41,9 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
     }
     // localStorage.setItem("movies",  JSON.stringify(movies));
     const movie = movies[localMovieMatched] //MOSTRAMOS LA PELICULA EN LA POSICION 0, QUE ES A LO QUE EQUIVALE LA VARIABLE
-    // ids = ids.concat(movie.id);
-    // localStorage.setItem("ids",ids)
+    localStorage.setItem("ids",movie.id)
+    let providers = JSON.parse(localStorage.getItem("urls"))
+    
     //INSERTAMOS EN EL HTML EN EL LUGAR QUE SE INGRESO CADA ITERACION DE LA PELICULA
     sitio.innerHTML = `
     <img class="background-movie" src="${url+movie.backdrop_path}" alt="">
@@ -74,10 +75,12 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
                         <a href=""><img src="../../public/img/disney.png" alt="" class="img-avaliable imgmovie"></a>
                         <a href=""><img src="../../public/img/amazon.png" alt="" class="img-avaliable imgmovie"></a>
                         <a href=""><img src="../../public/img/netflix.png" alt="" class="img-avaliable imgmovie"></a>
+                        
+                        
                     </div>
                 </div>
 
-                <div class="d-flex flex-column  gap-4 justify-content-center align-items-center ">
+                <div class="d-flex flex-column pb-5  gap-4 justify-content-center align-items-center ">
                     <h2>Contract with us 50% off</h2>
                     <a class="whatsapp"
                         href="https://wa.me/573162777179/?text=Hola, somos MovieMatch quieres conocer nuestros planes?"
@@ -104,39 +107,60 @@ export  async function callingMoviesByGenres(genres,sitio,movieMatched=0) {
                         <p class="rating-movie">${movie.vote_average}</p>
                     </div>
                 </div>
-
+                </article>
                 <div class="container-buttons-mobile d-flex justify-content-center gap-3 mt-5 pe-5">
-                    <button class="btn btn-rematch" type="submit">Re Match</button>
+                <button class="btn btn-rematch-desktop" type="submit">Re Match</button>
                     <a href="./accepted.html"><button class="btn" type="submit">Match</button></a>
                 </div>
-            </article>
+            
         </section>
     `; 
 
     // #####################BOTON REMATCH #########################
-    let btnRematch = document.querySelector(".btn-rematch") //EN ESTE EVENTO VAMOS A AÑADIRLE 1 AL CONTADOR CREADO Y VOLVEMOS A LLAMAR LA FUNCION PARA QUE MUETSRE LA SIGUIENTE PELICULA
+    let btnRematch = document.querySelector(".btn-rematch")
+   //EN ESTE EVENTO VAMOS A AÑADIRLE 1 AL CONTADOR CREADO Y VOLVEMOS A LLAMAR LA FUNCION PARA QUE MUETSRE LA SIGUIENTE PELICULA
     btnRematch.addEventListener("click", ()=>{
       let contenedor = document.querySelector('#container-movies')
       const generos = localStorage.getItem("genres")
+      ids = localStorage.getItem("ids")
+      localStorage.removeItem("urls")
+      getProviders(ids)
+      localStorage.removeItem("ids")
+      
       localMovieMatched+=1
       callingMoviesByGenres(generos,contenedor,localMovieMatched)
   })
+
+  let btnRematchDesktop = document.querySelector(".btn-rematch-desktop")
+ //EN ESTE EVENTO VAMOS A AÑADIRLE 1 AL CONTADOR CREADO Y VOLVEMOS A LLAMAR LA FUNCION PARA QUE MUETSRE LA SIGUIENTE PELICULA
+  btnRematchDesktop.addEventListener("click", ()=>{
+    let contenedor = document.querySelector('#container-movies')
+    const generos = localStorage.getItem("genres")
+    ids = localStorage.getItem("ids")
+    localStorage.removeItem("urls")
+    getProviders(ids)
+    localStorage.removeItem("ids")
+    
+    localMovieMatched+=1
+    callingMoviesByGenres(generos,contenedor,localMovieMatched)  
+})
   }
+  
 
 // #################################################FUNCION PARA OBTENER PROOVEDORES#####################################################################################
 
 export async function getProviders(id) { //AÑADIMOS EL ID DE LA PELICULA A BUSCAR 
   const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?watch_region=CO`, options)
   const data = await response.json();
+  const urls = []
   // console.log(data.results.CO.rent);
   let url = "https://image.tmdb.org/t/p/w500/" //URL PARA QUE MUESTRTE LAS IMAGENES
-  let providers = await data.results.CO?.rent  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
-  await providers?.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
+  let providers = await data.results.CO.flatrate  //FILTRAMOS EL ARRAY PARA QUE ME DE LOS PROOVEDORES
+  await providers.forEach(plataform => {       //RECORREMOS LOS PROOVEDORES PARA MOSTRAR TODAS LAS IMAGENES
     if(providers !== null){                     
-      console.log(id, ":",url+plataform.logo_path)
-    }else{
-      console.log(id,"no hayy");
-    }
+      urls.push(url+plataform.logo_path) //AÑADIMOS LAS IMAGENES A UN ARRAY
+      localStorage.setItem("urls",JSON.stringify(urls)) //AÑADIMOS EL ARRAY A LOCALSTORAGE PARA QUE SEA ACCESIBLE EN CUALQUIER PAGINA
+     }
     //RETURN URL IMAGE TO PROVIDERS
   });
 }
