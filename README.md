@@ -48,7 +48,6 @@ https://www.figma.com/design/f08h2VZlmkXx3EkP7yKAh7/MovieMatch?node-id=22%3A2&t=
 [Milena González Castrollón](https://github.com/milena-727)
 [Brayan Rodríguez Mosquera](https://github.com/Duvingrand)
 
-
 Link to Trello Activity Board:
 https://trello.com/invite/b/QzQY5UPQ/ATTIb3b7da66cb8212a9686998b40bd2899e286F9085/moviematch
 

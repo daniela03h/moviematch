@@ -83,6 +83,22 @@
         "402434"
       ],
       "notFavMovies": []
+    },
+    {
+      "id": "3e2c",
+      "username": "daniela",
+      "email": "felipe@bestemail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "862",
+        "862",
+        "16356"
+      ],
+      "notFavMovies": [
+        "1022789",
+        "438148"
+      ]
     }
   ]
 }
