@@ -33,7 +33,9 @@
       "password": "1",
       "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
       "favMovies": [
-        "929590"
+        "929590",
+        "872585",
+        "739547"
       ],
       "notFavMovies": [
         "68730"
@@ -51,17 +53,52 @@
       "notFavMovies": []
     },
     {
-      "id": "efe7",
-      "username": "jarenas1",
-      "email": "karen@gmail.com",
+      "id": "4c9f",
+      "username": "felipe",
+      "email": "f@f",
+      "password": "12",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "111"
+      ],
+      "notFavMovies": [
+        "937287"
+      ]
+    },
+    {
+      "id": "9f79",
+      "username": "hdADJS",
+      "email": "jcomte23@gmail.com",
+      "password": "1234",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "16bb",
+      "username": "daniela0393h@gmail.com",
+      "email": "jcomte24@gmail.com",
       "password": "123",
       "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
       "favMovies": [
-        "489931",
-        "748783",
-        "1022789"
+        "402434"
       ],
       "notFavMovies": []
+    },
+    {
+      "id": "3e2c",
+      "username": "daniela",
+      "email": "felipe@bestemail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "862",
+        "862",
+        "16356"
+      ],
+      "notFavMovies": [
+        "1022789",
+        "438148"
+      ]
     }
   ]
 }

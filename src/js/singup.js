@@ -1,5 +1,6 @@
 import "../scss/singup.scss";
 import * as bootstrap from "bootstrap";
+import Swal from "sweetalert2";
 
 //CALL INPUTS AND FORM
 
@@ -19,9 +20,17 @@ form.addEventListener("submit", async (event) => {
     await registerUser(username, email, password, sIcon);
     window.location.href = "http://localhost:5173/src/pages/singin.html"; //ESTO SIRVE PARA MOVERNOS DESDE EL JAVASCRIPT A OTRAS VENTANAS
   } else if (checkPassword && !checkEmail) { //SI NO SACA ALERTA
-    alert("El correo ya se encuentra registrado");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "The email is already registered",
+    });
   }else  {
-    alert("Las contraseñas no coinciden");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Passwords do not match",
+    });
   }
 });
 

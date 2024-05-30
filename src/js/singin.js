@@ -1,6 +1,6 @@
 import '../scss/singin.scss';
 import * as bootstrap from 'bootstrap'
-
+import Swal from "sweetalert2";
 //Llamar inputs de formato
 const form = document.querySelector('form')
 const email = document.querySelector('#email')
@@ -11,7 +11,11 @@ form.addEventListener('submit', async(event) => { //CUANDO LE DE CLICK AL BOTON 
     event.preventDefault()
     const user = await validateEmail(email)
     if (user === false){ //SI EL CORREO DA FALSE ES PORQUE NO EXISTE
-        alert("No esta regitrado")
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "It is not registered",
+          });
     }else{
         if (user.password == password.value){ //VERIFICA CONTRASEÑA
 
@@ -20,7 +24,12 @@ form.addEventListener('submit', async(event) => { //CUANDO LE DE CLICK AL BOTON 
 
             window.location.href = "http://localhost:5173" //MOVEMOS AL USUARIO A LA PAGINA PRINCIPAL
         }else{
-            alert("Contraseña Incorrecta")
+            Swal.fire({
+                icon: "error",
+                title: "Wrong password",
+                text: "Password wrong!",
+               
+              });
         }
     }
 })

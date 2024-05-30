@@ -11,10 +11,15 @@ $blue: #0E41E8;
 $white: #FFFFFF;
 $black: #000;
 
+*{
+    font-family: "Roboto", sans-serif;
+}
+
 body{
     background-color: $dark-purple;
 }
 
+// ###################################################HEADER############################################################
 .header{
     background-color: $black;
     display: flex;
@@ -48,14 +53,17 @@ body{
         font-weight: bold;
     }
 }
+
+// ####################################################CUERPO############################################
+
 .main-container{
     width: 100%;
     display: flex;
     gap: 20px;
     margin-top: 50px;
 }
-
-.favorites{
+// FAVORITOS
+.favo{
     width: 50%;
     border: 3px solid $blue;
     color: $white;
@@ -71,8 +79,8 @@ body{
             flex-wrap: wrap;
         }
 }
-
-.not-favorites{
+// NO FAVORITOS
+.not-favo{
     width: 50%;
     border: 3px solid $blue;
     color: $white;
@@ -80,4 +88,37 @@ body{
             text-align: center;
             font-weight: bold;
             }
+}
+
+.favorites{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    
+}
+
+.not-favorites{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width:630px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .favo{
+        width: 100%;
+    }
+
+    .not-favo{
+        width: 100%;
+    }
+
+    .user{
+        margin-left: 110px;
+    }
 }

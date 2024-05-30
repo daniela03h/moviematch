@@ -31,12 +31,12 @@ export async function startCounter(movie) {
     respuesta.then((result) => {
       // despues de elegir "yes" o "no"
       if (result.isConfirmed) {
-        alert("I'm glad you liked it!! :D");
+        Swal.fire("We are glad you liked it!! :D");
         updateFavMovies(userId, movie); //se agrega la pelicula a favoritos
         localStorage.removeItem("movie");
         
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        alert("We are sorry that it was not to your liking. :(");
+        Swal.fire("We are sorry that it was not to your liking. :(");
         updateNotFavMovies(userId, movie); //se agrega a no favoritos
         localStorage.removeItem("movie");
       }

@@ -33,7 +33,7 @@ main {
     section {
         width: 100%;
         max-width: 600px;
-        background-color: white; // $light-grey with 0.3 opacity
+        background-color: white; 
         padding: 20px;
         border-radius: 10px;
 
@@ -90,10 +90,9 @@ main {
         font-weight: 1000;
         font-size: x-large;
         cursor: pointer;
-        transition: background 0.3s;
 
         &:hover {
-            background: lighten(#0E41E8, 10%); // Cambia la opacidad de un color base similar
+            background: lighten(#0E41E8, 10%); 
         }
 
         @media (max-width: 600px) {
