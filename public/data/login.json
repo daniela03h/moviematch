@@ -38,6 +38,30 @@
       "notFavMovies": [
         "68730"
       ]
+    },
+    {
+      "id": "4476",
+      "username": "DANIELA",
+      "email": "D@D",
+      "password": "123",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "385687"
+      ],
+      "notFavMovies": []
+    },
+    {
+      "id": "efe7",
+      "username": "jarenas1",
+      "email": "karen@gmail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "489931",
+        "748783",
+        "1022789"
+      ],
+      "notFavMovies": []
     }
   ]
 }
