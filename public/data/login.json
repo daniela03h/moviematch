@@ -7,163 +7,98 @@
       "password": "123",
       "icon": "urlurlurl",
       "favMovies": [
-        {}
+        "823464"
       ],
       "notFavMovies": [
-        {}
+        "699280"
       ]
     },
     {
-      "id": "6426",
-      "username": "Juan",
-      "email": "cuentadeplay2468@gmail.com",
-      "password": "juan123",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "7d45",
-      "username": "juana07",
-      "email": "jcomte23@gmail.com",
-      "password": "Borodog0901",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "4d82",
-      "username": "1207",
-      "email": "nar@example.com",
-      "password": "12",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "fbae",
-      "username": "daniela",
-      "email": "jcomte@gmail.com",
-      "password": "123",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "03d8",
-      "username": "1033257947",
-      "email": "nar1@example.com",
-      "password": "123",
-      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "c0bc",
-      "username": "juan",
-      "email": "juan@gmail.com",
-      "password": "123",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "7994",
-      "username": "karenob",
-      "email": "karen@gmail.com",
-      "password": "123",
-      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "bc87",
-      "username": "CAPRY",
-      "email": "capry@gmail.com",
-      "password": "123",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "bcb8",
-      "username": "pablo",
-      "email": "pablo@gmail.com",
-      "password": "123",
-      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "1820",
-      "username": "perros",
-      "email": "perros@gmail.com",
-      "password": "123",
-      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "9a4c",
-      "username": "LINA",
-      "email": "jcomte23.@gmail.com",
+      "id": "2684",
+      "username": "edward",
+      "email": "edward@gmail",
       "password": "123",
       "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/peinado-para-rostro-cuadrado.jpeg",
-      "favMovies": [],
-      "notFavMovies": []
+      "favMovies": [
+        "1290938"
+      ],
+      "notFavMovies": [
+        "823464"
+      ]
     },
     {
-      "id": "3513",
-      "username": "david",
-      "email": "david@gmail.com",
+      "id": "0470",
+      "username": "f",
+      "email": "f@g",
+      "password": "1",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "929590",
+        "872585",
+        "739547"
+      ],
+      "notFavMovies": [
+        "68730"
+      ]
+    },
+    {
+      "id": "4476",
+      "username": "DANIELA",
+      "email": "D@D",
       "password": "123",
-      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "385687"
+      ],
+      "notFavMovies": []
+    },
+    {
+      "id": "4c9f",
+      "username": "felipe",
+      "email": "f@f",
+      "password": "12",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "111"
+      ],
+      "notFavMovies": [
+        "937287"
+      ]
+    },
+    {
+      "id": "9f79",
+      "username": "hdADJS",
+      "email": "jcomte23@gmail.com",
+      "password": "1234",
       "favMovies": [],
       "notFavMovies": []
     },
     {
-      "id": "ed73",
-      "username": "pipegay",
-      "email": "pipe@gmail.com",
+      "id": "16bb",
+      "username": "daniela0393h@gmail.com",
+      "email": "jcomte24@gmail.com",
       "password": "123",
       "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
-      "favMovies": [],
+      "favMovies": [
+        "402434"
+      ],
       "notFavMovies": []
     },
     {
-      "id": "974d",
-      "username": "facosta",
+      "id": "3e2c",
+      "username": "daniela",
       "email": "felipe@bestemail.com",
-      "password": "loveyou",
-      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "3d8d",
-      "username": "daniela",
-      "email": "daniela0393h@gmail.com",
       "password": "123",
-      "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/corte-de-pelo-olivia-wilde-cara-cuadrada.jpeg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "9f20",
-      "username": "daniela",
-      "email": "daniela@gmail.com",
-      "password": "123",
-      "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/corte-de-pelo-olivia-wilde-cara-cuadrada.jpeg",
-      "favMovies": [],
-      "notFavMovies": []
-    },
-    {
-      "id": "d324",
-      "username": "daniela",
-      "email": "daniela12@gmail.com",
-      "password": "098",
-      "icon": "https://hips.hearstapps.com/hmg-prod/images/michael-1620917754.jpg?crop=0.684xw:0.530xh;0.162xw,0.0253xh&resize=980:*",
-      "favMovies": [],
-      "notFavMovies": []
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "862",
+        "862",
+        "16356"
+      ],
+      "notFavMovies": [
+        "1022789",
+        "438148"
+      ]
     }
   ]
 }

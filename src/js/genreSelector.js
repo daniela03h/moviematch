@@ -1,6 +1,7 @@
 import "../scss/genreSelector.scss";
 import * as bootstrap from "bootstrap";
 import { callingGenres } from "./api"
+import Swal from "sweetalert2";
 
 let genresSection = document.getElementById("genres"); //SE LLAMA ESTA SESION Y SE PONE COMO ATRIBUTO EN LA FUNCION DE LLAMAR GENEROS PARA QUE ESTA LOS PINTE EN ESE CONTENEDOR
 let genresSelected = document.getElementById("selected-genres"); //EN ESTE CONTENEDOR SE PINTAN LOS GENEROS QUE SE VAN SELECCIONANDO
@@ -48,8 +49,15 @@ function showSelectedGenres() {
       genresSelected.innerHTML += ` 
       <button type="button" class="genre-btn" id="${idGenreSelected}" name="${selectedGenre[idGenreSelected]}">${selectedGenre[idGenreSelected]}</button>`; // Creación de botones con cada género seleccionado
       genresCounter++;
+      // Alerta en caso de que se supere la capacidad máxima
     } else {
-      alert("el máximo de géneros agregable es 3"); // Alerta en caso de que se supere la capacidad máxima
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "The maximum number of genres that can be added is 3",
+      
+      });
+     
       delete selectedGenre[idGenreSelected]; // Eliminar género sobrante del objeto "selectedGenre"
     }
   }

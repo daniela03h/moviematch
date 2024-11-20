@@ -16,12 +16,16 @@ $black: #000;
 * {
   color: $white;
   font-family: "Roboto", sans-serif;
+}
+
+body {
   background-color: $dark-purple;
 }
 
 main {
   margin-top: 100px;
 }
+
 .titles-genre {
   font-size: 50px;
 }

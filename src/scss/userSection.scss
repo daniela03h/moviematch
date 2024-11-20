@@ -1,0 +1,124 @@
+@import url(./normalize.scss);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+$faded-blue: linear-gradient(to right, #0E41E8 0%, #195BEB 37%, #227AE8 69%, #32DDE4 100%);
+$dark-purple: #0F001E;
+$light-grey: #EFEFEF;
+$grey: #9D9D9C;
+$blue: #0E41E8;
+$white: #FFFFFF;
+$black: #000;
+
+*{
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: $dark-purple;
+}
+
+// ###################################################HEADER############################################################
+.header{
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    align-items: center;
+    border-bottom: 3px solid $blue;
+}
+
+.user{
+    display: flex;
+    width: 350px;
+    gap: 20px;
+    justify-content: flex-start;
+    color: $white;    
+        img{
+            width: 45px;
+            height: 45px;
+            border-radius: 100px;
+            border: solid 2px $blue;
+        }
+}
+
+.home{
+    margin-left: 50px;
+
+    a{
+        color: $white;
+        text-decoration: none;
+        font-size: x-large;
+        font-weight: bold;
+    }
+}
+
+// ####################################################CUERPO############################################
+
+.main-container{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+// FAVORITOS
+.favo{
+    width: 50%;
+    border: 3px solid $blue;
+    color: $white;
+        h2{
+            text-align: center;
+            font-weight: bold;
+        }
+        .card-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+}
+// NO FAVORITOS
+.not-favo{
+    width: 50%;
+    border: 3px solid $blue;
+    color: $white;
+        h2{
+            text-align: center;
+            font-weight: bold;
+            }
+}
+
+.favorites{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    
+}
+
+.not-favorites{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width:630px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .favo{
+        width: 100%;
+    }
+
+    .not-favo{
+        width: 100%;
+    }
+
+    .user{
+        margin-left: 110px;
+    }
+}
