@@ -106,9 +106,14 @@
       "email": "j@j",
       "password": "1",
       "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/peinado-para-rostro-cuadrado.jpeg",
-      "favMovies": [],
+      "favMovies": [
+        "1022789"
+      ],
       "notFavMovies": [
-        "787699"
+        "787699",
+        "346698",
+        "882059",
+        "1011985"
       ]
     }
   ]
