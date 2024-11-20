@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": "ad23",
+      "username": "example",
+      "email": "example1@example.com",
+      "password": "123",
+      "icon": "urlurlurl",
+      "favMovies": [
+        "823464"
+      ],
+      "notFavMovies": [
+        "699280"
+      ]
+    },
+    {
+      "id": "2684",
+      "username": "edward",
+      "email": "edward@gmail",
+      "password": "123",
+      "icon": "https://www.tuasesordemoda.com/wp-content/uploads/2022/11/peinado-para-rostro-cuadrado.jpeg",
+      "favMovies": [
+        "1290938"
+      ],
+      "notFavMovies": [
+        "823464"
+      ]
+    },
+    {
+      "id": "0470",
+      "username": "f",
+      "email": "f@g",
+      "password": "1",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "929590",
+        "872585",
+        "739547"
+      ],
+      "notFavMovies": [
+        "68730"
+      ]
+    },
+    {
+      "id": "4476",
+      "username": "DANIELA",
+      "email": "D@D",
+      "password": "123",
+      "icon": "https://uploads.vibra.co/1/2020/06/10-hombres-famosos-con-el-rostro-perfecto-02.jpg",
+      "favMovies": [
+        "385687"
+      ],
+      "notFavMovies": []
+    },
+    {
+      "id": "4c9f",
+      "username": "felipe",
+      "email": "f@f",
+      "password": "12",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "111"
+      ],
+      "notFavMovies": [
+        "937287"
+      ]
+    },
+    {
+      "id": "9f79",
+      "username": "hdADJS",
+      "email": "jcomte23@gmail.com",
+      "password": "1234",
+      "favMovies": [],
+      "notFavMovies": []
+    },
+    {
+      "id": "16bb",
+      "username": "daniela0393h@gmail.com",
+      "email": "jcomte24@gmail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "402434"
+      ],
+      "notFavMovies": []
+    },
+    {
+      "id": "3e2c",
+      "username": "daniela",
+      "email": "felipe@bestemail.com",
+      "password": "123",
+      "icon": "https://www.mdzol.com/u/fotografias/m/2021/4/21/f638x638-1046629_1104796_5050.jpg",
+      "favMovies": [
+        "862",
+        "862",
+        "16356"
+      ],
+      "notFavMovies": [
+        "1022789",
+        "438148"
+      ]
+    }
+  ]
+}
